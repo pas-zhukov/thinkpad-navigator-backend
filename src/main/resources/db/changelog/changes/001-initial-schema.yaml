@@ -1,0 +1,224 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-initial-schema
+      author: system
+      changes:
+        - createTable:
+            tableName: models
+            columns:
+              - column:
+                  name: model_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: model_series
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model_number
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: release_year
+                  type: int
+
+        - createTable:
+            tableName: generations
+            columns:
+              - column:
+                  name: generation_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: model_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_generations_model
+                    references: models(model_id)
+              - column:
+                  name: generation_number
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: generation_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: release_year
+                  type: int
+
+        - createTable:
+            tableName: configurations
+            columns:
+              - column:
+                  name: config_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: generation_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_configurations_generation
+                    references: generations(generation_id)
+              - column:
+                  name: full_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cpu
+                  type: varchar(100)
+              - column:
+                  name: gpu
+                  type: varchar(100)
+              - column:
+                  name: ram
+                  type: varchar(50)
+              - column:
+                  name: storage_ssd
+                  type: varchar(50)
+              - column:
+                  name: storage_hdd
+                  type: varchar(50)
+              - column:
+                  name: display_size
+                  type: varchar(20)
+              - column:
+                  name: display_resolution
+                  type: varchar(50)
+              - column:
+                  name: display_type
+                  type: varchar(50)
+              - column:
+                  name: weight
+                  type: varchar(20)
+              - column:
+                  name: price
+                  type: decimal(10,2)
+              - column:
+                  name: buy_url
+                  type: varchar(255)
+              - column:
+                  name: thumb_url
+                  type: varchar(255)
+              - column:
+                  name: is_new
+                  type: boolean
+              - column:
+                  name: last_updated
+                  type: datetime
+
+        - createTable:
+            tableName: features
+            columns:
+              - column:
+                  name: feature_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: config_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_features_config
+                    references: configurations(config_id)
+              - column:
+                  name: feature_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: feature_value
+                  type: text
+                  constraints:
+                    nullable: false
+
+        - createTable:
+            tableName: suitable_for
+            columns:
+              - column:
+                  name: suitable_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: config_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_suitable_for_config
+                    references: configurations(config_id)
+              - column:
+                  name: task_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: suitability_score
+                  type: int
+
+        - addUniqueConstraint:
+            tableName: models
+            columnNames: model_series, model_number
+            constraintName: uk_model_series_number
+
+        - addUniqueConstraint:
+            tableName: generations
+            columnNames: model_id, generation_number
+            constraintName: uk_generation_model_number
+
+        - createIndex:
+            indexName: idx_config_cpu
+            tableName: configurations
+            columns:
+              - column:
+                  name: cpu
+
+        - createIndex:
+            indexName: idx_config_price
+            tableName: configurations
+            columns:
+              - column:
+                  name: price
+
+        - createIndex:
+            indexName: idx_config_full_name
+            tableName: configurations
+            columns:
+              - column:
+                  name: full_name
+
+        - createIndex:
+            indexName: idx_generation_name
+            tableName: generations
+            columns:
+              - column:
+                  name: generation_name 
