@@ -1,4 +1,37 @@
 databaseChangeLog:
+
   - include:
       file: changes/001-initial-schema.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/002-insert-thinkpad-generations-temp-data.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/003-migrate-thinkpad-models-and-generations-data.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/004-clean-model_number-and-model_name.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/005-insert-raw-configurations-data.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/006-remove-duplicates-clean-data.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/007-create-table-configuration.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/008-migrate-configurations.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/009-fix-brands.yaml
       relativeToChangelogFile: true

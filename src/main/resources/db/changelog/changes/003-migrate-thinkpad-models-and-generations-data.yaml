@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-migrate-thinkpad-models-and-generations-data
+      author: pas-zhukov
+      changes:
+        - addUniqueConstraint:
+            tableName: model
+            columnNames: model_series, model_number, model_name
+            constraintName: uniq_model_identity
+            
+        - sql:
+            sql: >
+              INSERT INTO model (model_series, model_number, model_name)
+              SELECT DISTINCT 
+                tgt.model_series,
+                tgt.model_number,
+                tgt.model_name
+              FROM thinkpad_generations_temp tgt
+              ON CONFLICT ON CONSTRAINT uk_model_series_number_name DO NOTHING;
+
+        - sql:
+            sql: >
+              INSERT INTO generation (model_id, generation_number, postfix, generation_type, original_name)
+              SELECT
+                m.id,
+                (CASE WHEN tgt.generation_number = 'UNKNOWN' THEN NULL ELSE tgt.generation_number END),
+                (CASE WHEN tgt.postfix = '' THEN NULL ELSE tgt.postfix END),
+                tgt.generation_type,
+                tgt.original_name
+              FROM thinkpad_generations_temp tgt
+              LEFT JOIN model m 
+                ON m.model_series = tgt.model_series 
+                AND m.model_number = tgt.model_number
+                AND m.model_name = tgt.model_name
+              ON CONFLICT ON CONSTRAINT uk_model_generation_number_postfix_original_name DO NOTHING;

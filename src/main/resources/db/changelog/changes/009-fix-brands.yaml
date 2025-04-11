@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 009-fix-brands
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              UPDATE configuration
+              SET brand = 'Lenovo'
+              WHERE name ILIKE '%lenovo%'
+              AND NOT brand = 'Lenovo';

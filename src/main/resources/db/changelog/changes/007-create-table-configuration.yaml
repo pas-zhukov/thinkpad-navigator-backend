@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: 007-create-table-configuration
+      author: pas-zhukov
+      changes:
+        - createTable:
+            tableName: configuration
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: details_url
+                  type: TEXT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: thumbnail_url
+                  type: TEXT
+
+              - column:
+                  name: brand
+                  type: VARCHAR(63)
+
+              - column:
+                  name: cpu
+                  type: VARCHAR(63)
+
+              - column:
+                  name: gpu
+                  type: VARCHAR(63)
+
+              - column:
+                  name: display_size
+                  type: NUMERIC(5,1)
+
+              - column:
+                  name: display_resolution
+                  type: VARCHAR(63)
+
+              - column:
+                  name: panel_type
+                  type: VARCHAR(15)
+
+              - column:
+                  name: storage_ssd
+                  type: NUMERIC(10,1)
+
+              - column:
+                  name: storage_hdd
+                  type: NUMERIC(10,1)
+
+              - column:
+                  name: ram
+                  type: NUMERIC(5,1)
+
+              - column:
+                  name: weight
+                  type: NUMERIC(5,2)

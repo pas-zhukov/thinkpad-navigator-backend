@@ -1,0 +1,408 @@
+model_series,model_number,model_name,postfix,generation_number,generation_type,original_name
+X,1,Carbon,,5,new,Lenovo ThinkPad X1 Carbon (5th Gen)
+X,2,NONAME,,70,old,Lenovo ThinkPad X270
+P,52,NONAME,s,UNKNOWN,new,Lenovo P52s
+14,,NONAME,,6,new,Lenovo ThinkBook 14 Gen 6
+10,,NONAME,,2,new,Lenovo ThinkPad 10 (2nd Gen)
+11,,NONAME,e,UNKNOWN,new,Lenovo ThinkPad 11e
+11,,NONAME,e,2,new,Lenovo ThinkPad 11e (2nd Gen)
+11,,NONAME,e,3,new,Lenovo ThinkPad 11e (3rd Gen)
+11,,NONAME,e,4,new,Lenovo ThinkPad 11e (4th Gen)
+11,,NONAME,e,5,new,Lenovo ThinkPad 11e (5th Gen)
+11,,NONAME,e,3,new,Lenovo ThinkPad 11e 3rd Gen
+11,,NONAME,e,3,new,Lenovo ThinkPad 11e Chromebook (3rd Gen)
+11,,NONAME,e,5,new,Lenovo ThinkPad 11e Gen 5
+13,,NONAME,,13,new,Lenovo ThinkPad 13
+13,,NONAME,,2,new,Lenovo ThinkPad 13 (2nd Gen
+13,,NONAME,,2,new,Lenovo ThinkPad 13 (2nd Gen)
+13,,NONAME,,UNKNOWN,new,Lenovo ThinkPad 13 Chromebook
+13,,NONAME,x,UNKNOWN,new,Lenovo ThinkPad 13x
+14,,NONAME,,6,new,Lenovo ThinkPad 14 Gen 6
+25,,NONAME,,25,new,Lenovo ThinkPad 25
+3,2,NONAME,,0,old,"Lenovo ThinkPad 320 15"""
+5,7,NONAME,,0,old,Lenovo ThinkPad 570
+A,2,NONAME,,75,old,Lenovo ThinkPad A275
+A,2,NONAME,,85,old,Lenovo ThinkPad A285
+A,4,NONAME,,75,old,Lenovo ThinkPad A475
+A,4,NONAME,,85,old,Lenovo ThinkPad A485
+C,13,Yoga,,1,new,Lenovo ThinkPad C13 Yoga Gen 1 Chromebook
+C,14,NONAME,,1,new,Lenovo ThinkPad C14 Gen 1 Chromebook
+E,14,NONAME,,UNKNOWN,new,Lenovo ThinkPad E14
+E,14,NONAME,,2,new,Lenovo ThinkPad E14 Gen 2
+E,14,NONAME,,2,new,Lenovo ThinkPad E14 Gen 2 (AMD)
+E,14,NONAME,,2,new,Lenovo ThinkPad E14 Gen 2 (Intel)
+E,14,NONAME,,3,new,Lenovo ThinkPad E14 Gen 3
+E,14,NONAME,,4,new,Lenovo ThinkPad E14 Gen 4
+E,14,NONAME,,5,new,Lenovo ThinkPad E14 Gen 5
+E,14,NONAME,,6,new,Lenovo ThinkPad E14 Gen 6
+E,15,NONAME,,UNKNOWN,new,Lenovo ThinkPad E15
+E,15,NONAME,,2,new,Lenovo ThinkPad E15 Gen 2
+E,15,NONAME,,2,new,Lenovo ThinkPad E15 Gen 2 (AMD)
+E,15,NONAME,,2,new,Lenovo ThinkPad E15 Gen 2 (Intel)
+E,15,NONAME,,3,new,Lenovo ThinkPad E15 Gen 3
+E,15,NONAME,,3,new,"Lenovo ThinkPad E15 Gen 3 15.6"""
+E,15,NONAME,,4,new,Lenovo ThinkPad E15 Gen 4
+E,16,NONAME,,1,new,Lenovo ThinkPad E16 Gen 1
+E,16,NONAME,,2,new,Lenovo ThinkPad E16 Gen 2
+E,4,NONAME,,50,old,Lenovo ThinkPad E450
+E,4,NONAME,,60,old,Lenovo ThinkPad E460
+E,4,NONAME,,65,old,Lenovo ThinkPad E465
+E,4,NONAME,,70,old,Lenovo ThinkPad E470
+E,4,NONAME,,80,old,Lenovo ThinkPad E480
+E,4,NONAME,,85,old,Lenovo ThinkPad E485
+E,4,NONAME,,90,old,Lenovo ThinkPad E490
+E,4,NONAME,,90,old,Lenovo ThinkPad E490 / E495
+E,4,NONAME,s,90,old,Lenovo ThinkPad E490s
+E,4,NONAME,,95,old,Lenovo ThinkPad E495
+E,5,NONAME,,40,old,Lenovo ThinkPad E540
+E,5,NONAME,,50,old,Lenovo ThinkPad E550
+E,5,NONAME,,60,old,Lenovo ThinkPad E560
+E,5,NONAME,,65,old,Lenovo ThinkPad E565
+E,5,NONAME,,70,old,Lenovo ThinkPad E570
+E,5,NONAME,,75,old,Lenovo ThinkPad E575
+E,5,NONAME,,80,old,Lenovo ThinkPad E580
+E,5,NONAME,,85,old,Lenovo ThinkPad E585
+E,5,NONAME,,90,old,Lenovo ThinkPad E590
+E,5,NONAME,,95,old,Lenovo ThinkPad E595
+E,4,Edge,,70,old,Lenovo ThinkPad Edge E470
+E,5,Edge,,30,old,Lenovo ThinkPad Edge E530
+E,5,Edge,,31,old,Lenovo ThinkPad Edge E531
+E,5,Edge,,40,old,Lenovo ThinkPad Edge E540
+E,5,Edge,,70,old,Lenovo ThinkPad Edge E570
+E,5,Edge,,90,old,Lenovo ThinkPad Edge E590
+E,5,Edge,,95,old,Lenovo ThinkPad Edge E595
+L,13,NONAME,,UNKNOWN,new,Lenovo ThinkPad L13
+L,13,NONAME,,5,new,Lenovo ThinkPad L13 2-in-1 Gen 5
+L,13,NONAME,,2,new,Lenovo ThinkPad L13 Gen 2
+L,13,NONAME,,2,new,Lenovo ThinkPad L13 Gen 2 (Intel)
+L,13,NONAME,,3,new,Lenovo ThinkPad L13 Gen 3
+L,13,NONAME,,4,new,Lenovo ThinkPad L13 Gen 4
+L,13,NONAME,,5,new,Lenovo ThinkPad L13 Gen 5
+L,13,NONAME,,5,new,Lenovo ThinkPad L13 Gen 5 2-in-1
+L,13,Yoga,,UNKNOWN,new,Lenovo ThinkPad L13 Yoga
+L,13,Yoga,,2,new,Lenovo ThinkPad L13 Yoga Gen 2
+L,13,Yoga,,2,new,Lenovo ThinkPad L13 Yoga Gen 2 (Intel)
+L,13,Yoga,,3,new,Lenovo ThinkPad L13 Yoga Gen 3
+L,13,Yoga,,4,new,Lenovo ThinkPad L13 Yoga Gen 4
+L,14,NONAME,,UNKNOWN,new,Lenovo ThinkPad L14
+L,14,NONAME,,1,new,Lenovo ThinkPad L14 Gen 1
+L,14,NONAME,,1,new,Lenovo ThinkPad L14 Gen 1 (AMD)
+L,14,NONAME,,1,new,Lenovo ThinkPad L14 Gen 1 (Intel)
+L,14,NONAME,,2,new,Lenovo ThinkPad L14 Gen 2
+L,14,NONAME,,2,new,Lenovo ThinkPad L14 Gen 2 (Intel)
+L,14,NONAME,,3,new,Lenovo ThinkPad L14 Gen 3
+L,14,NONAME,,4,new,Lenovo ThinkPad L14 Gen 4
+L,14,NONAME,,4,new,Lenovo ThinkPad L14 Gen 4 (Intel)
+L,14,NONAME,,5,new,Lenovo ThinkPad L14 Gen 5
+L,14,NONAME,,1,new,Lenovo ThinkPad L14 Gen1
+L,15,NONAME,,1,new,Lenovo ThinkPad L15 Gen 1
+L,15,NONAME,,1,new,Lenovo ThinkPad L15 Gen 1 (AMD)
+L,15,NONAME,,1,new,Lenovo ThinkPad L15 Gen 1 (Intel)
+L,15,NONAME,,2,new,Lenovo ThinkPad L15 Gen 2
+L,15,NONAME,,2,new,Lenovo ThinkPad L15 Gen 2 (Intel)
+L,15,NONAME,,3,new,Lenovo ThinkPad L15 Gen 3
+L,15,NONAME,,3,new,Lenovo ThinkPad L15 Gen 3 AMD
+L,15,NONAME,,4,new,Lenovo ThinkPad L15 Gen 4
+L,16,NONAME,,1,new,Lenovo ThinkPad L16 Gen 1
+L,3,NONAME,,80,old,Lenovo ThinkPad L380
+L,3,Yoga,,80,old,Lenovo ThinkPad L380 Yoga
+L,3,NONAME,,90,old,Lenovo ThinkPad L390
+L,3,Yoga,,90,old,Lenovo ThinkPad L390 Yoga
+L,4,NONAME,,60,old,Lenovo ThinkPad L460
+L,4,NONAME,,70,old,Lenovo ThinkPad L470
+L,4,NONAME,,80,old,Lenovo ThinkPad L480
+L,4,NONAME,,90,old,Lenovo ThinkPad L490
+L,5,NONAME,,60,old,Lenovo ThinkPad L560
+L,5,NONAME,,70,old,Lenovo ThinkPad L570
+L,5,NONAME,,80,old,Lenovo ThinkPad L580
+L,5,NONAME,,90,old,Lenovo ThinkPad L590
+P,1,NONAME,,UNKNOWN,new,Lenovo ThinkPad P1
+P,1,NONAME,,2,new,Lenovo ThinkPad P1 (2nd Gen)
+P,1,NONAME,,3,new,Lenovo ThinkPad P1 (Gen 3)
+P,1,NONAME,,2,new,Lenovo ThinkPad P1 Gen 2
+P,1,NONAME,,3,new,Lenovo ThinkPad P1 Gen 3
+P,1,NONAME,,4,new,Lenovo ThinkPad P1 Gen 4
+P,1,NONAME,,5,new,Lenovo ThinkPad P1 Gen 5
+P,1,NONAME,,6,new,Lenovo ThinkPad P1 Gen 6
+P,1,NONAME,,7,new,Lenovo ThinkPad P1 Gen 7
+P,14,NONAME,s,1,new,Lenovo ThinkPad P14s Gen 1
+P,14,NONAME,s,1,new,Lenovo ThinkPad P14s Gen 1 (AMD)
+P,14,NONAME,s,1,new,Lenovo ThinkPad P14s Gen 1 (Intel)
+P,14,NONAME,s,2,new,Lenovo ThinkPad P14s Gen 2
+P,14,NONAME,s,3,new,Lenovo ThinkPad P14s Gen 3
+P,14,NONAME,s,4,new,Lenovo ThinkPad P14s Gen 4
+P,14,NONAME,s,5,new,Lenovo ThinkPad P14s Gen 5
+P,15,NONAME,,1,new,Lenovo ThinkPad P15 Gen 1
+P,15,NONAME,,2,new,Lenovo ThinkPad P15 Gen 2
+P,15,NONAME,g,1,new,Lenovo ThinkPad P15g Gen 1
+P,15,NONAME,s,1,new,Lenovo ThinkPad P15s Gen 1
+P,15,NONAME,s,2,new,Lenovo ThinkPad P15s Gen 2
+P,15,NONAME,v,1,new,Lenovo ThinkPad P15v Gen 1
+P,15,NONAME,v,2,new,Lenovo ThinkPad P15v Gen 2
+P,15,NONAME,v,3,new,Lenovo ThinkPad P15v Gen 3
+P,16,NONAME,,1,new,Lenovo ThinkPad P16 Gen 1
+P,16,NONAME,,2,new,Lenovo ThinkPad P16 Gen 2
+P,16,NONAME,s,1,new,Lenovo ThinkPad P16s Gen 1
+P,16,NONAME,s,2,new,Lenovo ThinkPad P16s Gen 2
+P,16,NONAME,s,3,new,Lenovo ThinkPad P16s Gen 3
+P,16,NONAME,v,1,new,Lenovo ThinkPad P16v Gen 1
+P,16,NONAME,v,2,new,Lenovo ThinkPad P16v Gen 2
+P,17,NONAME,,1,new,Lenovo ThinkPad P17 Gen 1
+P,17,NONAME,,2,new,Lenovo ThinkPad P17 Gen 2
+P,40,Yoga,,UNKNOWN,new,Lenovo ThinkPad P40 Yoga
+P,43,NONAME,s,UNKNOWN,new,Lenovo ThinkPad P43s
+P,50,NONAME,,UNKNOWN,new,Lenovo ThinkPad P50
+P,50,NONAME,s,UNKNOWN,new,Lenovo ThinkPad P50s
+P,51,NONAME,,UNKNOWN,new,Lenovo ThinkPad P51
+P,51,NONAME,S,UNKNOWN,new,Lenovo ThinkPad P51S
+P,51,NONAME,s,UNKNOWN,new,Lenovo ThinkPad P51s
+P,52,NONAME,,UNKNOWN,new,Lenovo ThinkPad P52
+P,52,NONAME,s,UNKNOWN,new,Lenovo ThinkPad P52s
+P,53,NONAME,,UNKNOWN,new,Lenovo ThinkPad P53
+P,53,NONAME,,UNKNOWN,new,Lenovo ThinkPad P53 Workstation Laptop - Windows 10 Pro - Intel Hexa-Core i7-9850H
+P,53,NONAME,s,UNKNOWN,new,Lenovo ThinkPad P53s
+P,70,NONAME,,UNKNOWN,new,Lenovo ThinkPad P70
+P,71,NONAME,,UNKNOWN,new,Lenovo ThinkPad P71
+P,72,NONAME,,UNKNOWN,new,Lenovo ThinkPad P72
+P,73,NONAME,,UNKNOWN,new,Lenovo ThinkPad P73
+S,4,NONAME,,40,old,Lenovo ThinkPad S440
+S,5,NONAME,,31,old,Lenovo ThinkPad S531
+T,14,NONAME,,UNKNOWN,new,Lenovo ThinkPad T14
+T,14,NONAME,,1,new,Lenovo ThinkPad T14 Gen 1
+T,14,NONAME,,1,new,Lenovo ThinkPad T14 Gen 1 (AMD)
+T,14,NONAME,,1,new,Lenovo ThinkPad T14 Gen 1 (Intel)
+T,14,NONAME,,2,new,Lenovo ThinkPad T14 Gen 2
+T,14,NONAME,,3,new,Lenovo ThinkPad T14 Gen 3
+T,14,NONAME,,4,new,Lenovo ThinkPad T14 Gen 4
+T,14,NONAME,,5,new,Lenovo ThinkPad T14 Gen 5
+T,14,NONAME,s,1,new,Lenovo ThinkPad T14s Gen 1
+T,14,NONAME,s,1,new,Lenovo ThinkPad T14s Gen 1 (AMD)
+T,14,NONAME,s,1,new,Lenovo ThinkPad T14s Gen 1 (Intel)
+T,14,NONAME,s,2,new,Lenovo ThinkPad T14s Gen 2
+T,14,NONAME,s,3,new,Lenovo ThinkPad T14s Gen 3
+T,14,NONAME,s,4,new,Lenovo ThinkPad T14s Gen 4
+T,14,NONAME,s,5,new,Lenovo ThinkPad T14s Gen 5
+T,14,NONAME,s,6,new,Lenovo ThinkPad T14s Gen 6
+T,15,NONAME,,UNKNOWN,new,Lenovo ThinkPad T15
+T,15,NONAME,,1,new,Lenovo ThinkPad T15 Gen 1
+T,15,NONAME,,2,new,Lenovo ThinkPad T15 Gen 2
+T,15,NONAME,g,1,new,Lenovo ThinkPad T15g Gen 1
+T,15,NONAME,g,2,new,Lenovo ThinkPad T15g Gen 2
+T,15,NONAME,p,UNKNOWN,new,Lenovo ThinkPad T15p
+T,15,NONAME,p,1,new,Lenovo ThinkPad T15p Gen 1
+T,15,NONAME,p,2,new,Lenovo ThinkPad T15p Gen 2
+T,15,NONAME,p,3,new,Lenovo ThinkPad T15p Gen 3
+T,16,NONAME,,1,new,Lenovo ThinkPad T16 Gen 1
+T,16,NONAME,,2,new,Lenovo ThinkPad T16 Gen 2
+T,16,NONAME,,3,new,Lenovo ThinkPad T16 Gen 3
+T,4,NONAME,,40,old,Lenovo ThinkPad T440
+T,4,NONAME,P,40,old,Lenovo ThinkPad T440P
+T,4,NONAME,p,40,old,Lenovo ThinkPad T440p
+T,4,NONAME,s,40,old,Lenovo ThinkPad T440s
+T,4,NONAME,,50,old,Lenovo ThinkPad T450
+T,4,NONAME,s,50,old,Lenovo ThinkPad T450s
+T,4,NONAME,,60,old,Lenovo ThinkPad T460
+T,4,NONAME,p,60,old,Lenovo ThinkPad T460p
+T,4,NONAME,s,60,old,Lenovo ThinkPad T460s
+T,4,NONAME,,70,old,Lenovo ThinkPad T470
+T,4,NONAME,P,70,old,Lenovo ThinkPad T470P
+T,4,NONAME,p,70,old,Lenovo ThinkPad T470p
+T,4,NONAME,s,70,old,Lenovo ThinkPad T470s
+T,4,NONAME,,80,old,Lenovo ThinkPad T480
+T,4,NONAME,s,80,old,Lenovo ThinkPad T480s
+T,4,NONAME,,90,old,Lenovo ThinkPad T490
+T,4,NONAME,,90,old,Lenovo ThinkPad T490 / T495
+T,4,NONAME,S,90,old,Lenovo ThinkPad T490S
+T,4,NONAME,s,90,old,Lenovo ThinkPad T490s
+T,4,NONAME,s,90,old,Lenovo ThinkPad T490s / T495s
+T,4,NONAME,,95,old,Lenovo ThinkPad T495
+T,4,NONAME,s,95,old,Lenovo ThinkPad T495s
+T,5,NONAME,,30,old,Lenovo ThinkPad T530
+T,5,NONAME,,60,old,Lenovo ThinkPad T560
+T,5,NONAME,,70,old,Lenovo ThinkPad T570
+T,5,NONAME,,80,old,Lenovo ThinkPad T580
+T,5,NONAME,,90,old,Lenovo ThinkPad T590
+W,5,NONAME,,40,old,Lenovo ThinkPad W540
+W,5,NONAME,s,50,old,Lenovo ThinkPad W550s
+X,1,NONAME,,UNKNOWN,new,Lenovo ThinkPad X1
+X,1,NONAME,,9,new,Lenovo ThinkPad X1 2-in-1 Gen 9
+X,1,Carbon,,UNKNOWN,new,Lenovo ThinkPad X1 Carbon
+X,1,Carbon,,UNKNOWN,new,Lenovo ThinkPad X1 Carbon (2014)
+X,1,Carbon,,2,new,Lenovo ThinkPad X1 Carbon (2nd Gen)
+X,1,Carbon,,4,new,Lenovo ThinkPad X1 Carbon (4th Gen)
+X,1,Carbon,,UNKNOWN,new,Lenovo ThinkPad X1 Carbon (5-th Gen)
+X,1,Carbon,,5,new,Lenovo ThinkPad X1 Carbon (5th Gen)
+X,1,Carbon,,UNKNOWN,new,Lenovo ThinkPad X1 Carbon (5th gen)
+X,1,Carbon,,6,new,Lenovo ThinkPad X1 Carbon (6th Gen)
+X,1,Carbon,,1,new,Lenovo ThinkPad X1 Carbon 10th Gen
+X,1,Carbon,,4,new,Lenovo ThinkPad X1 Carbon 4
+X,1,Carbon,,4,new,Lenovo ThinkPad X1 Carbon 4th Gen
+X,1,Carbon,,5,new,Lenovo ThinkPad X1 Carbon 5
+X,1,Carbon,,5,new,Lenovo ThinkPad X1 Carbon 5th Gen
+X,1,Carbon,,6,new,Lenovo ThinkPad X1 Carbon 6
+X,1,Carbon,,6,new,Lenovo ThinkPad X1 Carbon 6th Gen
+X,1,Carbon,,7,new,Lenovo ThinkPad X1 Carbon 7
+X,1,Carbon,,8,new,Lenovo ThinkPad X1 Carbon 8
+X,1,Carbon,,9,new,Lenovo ThinkPad X1 Carbon 9
+X,1,Carbon,,1,new,Lenovo ThinkPad X1 Carbon Gen 10
+X,1,Carbon,,1,new,Lenovo ThinkPad X1 Carbon Gen 11
+X,1,Carbon,,1,new,Lenovo ThinkPad X1 Carbon Gen 12
+X,1,Carbon,,1,new,Lenovo ThinkPad X1 Carbon Gen 13 Aura Edition
+X,1,Carbon,,7,new,Lenovo ThinkPad X1 Carbon Gen 7
+X,1,Carbon,,8,new,Lenovo ThinkPad X1 Carbon Gen 8
+X,1,Carbon,,9,new,Lenovo ThinkPad X1 Carbon Gen 9
+X,1,Extreme,,UNKNOWN,new,Lenovo ThinkPad X1 Extreme
+X,1,Extreme,,2,new,Lenovo ThinkPad X1 Extreme (Gen 2)
+X,1,Extreme,,3,new,Lenovo ThinkPad X1 Extreme (Gen 3)
+X,1,Extreme,,2,new,Lenovo ThinkPad X1 Extreme 2
+X,1,Extreme,,3,new,Lenovo ThinkPad X1 Extreme 3
+X,1,Extreme,,2,new,Lenovo ThinkPad X1 Extreme Gen 2
+X,1,Extreme,,3,new,Lenovo ThinkPad X1 Extreme Gen 3
+X,1,Extreme,,4,new,Lenovo ThinkPad X1 Extreme Gen 4
+X,1,Extreme,,5,new,Lenovo ThinkPad X1 Extreme Gen 5
+X,1,Fold,,1,new,Lenovo ThinkPad X1 Fold 16 Gen 1
+X,1,Fold,,1,new,Lenovo ThinkPad X1 Fold Gen 1
+X,1,NONAME,,9,new,Lenovo ThinkPad X1 Gen 9 2-in-1
+X,1,Nano,,UNKNOWN,new,Lenovo ThinkPad X1 Nano
+X,1,Nano,,1,new,Lenovo ThinkPad X1 Nano 1
+X,1,Nano,,1,new,Lenovo ThinkPad X1 Nano Gen 1
+X,1,Nano,,2,new,Lenovo ThinkPad X1 Nano Gen 2
+X,1,Nano,,3,new,Lenovo ThinkPad X1 Nano Gen 3
+X,1,Nano,,2,new,Lenovo ThinkPad X1 Nano Gen2
+X,1,Tablet,,UNKNOWN,new,Lenovo ThinkPad X1 Tablet
+X,1,Tablet,,2,new,Lenovo ThinkPad X1 Tablet (2nd Gen)
+X,1,Tablet,,3,new,Lenovo ThinkPad X1 Tablet (3rd Gen)
+X,1,Tablet,,3,new,Lenovo ThinkPad X1 Tablet 3
+X,1,Tablet,,3,new,Lenovo ThinkPad X1 Tablet Gen 3
+X,1,Yoga,,1,new,Lenovo ThinkPad X1 Titanium Yoga Gen 1
+X,1,Yoga,,UNKNOWN,new,Lenovo ThinkPad X1 Yoga
+X,1,Yoga,,1,new,Lenovo ThinkPad X1 Yoga (1st Gen)
+X,1,Yoga,,2,new,Lenovo ThinkPad X1 Yoga (2nd Gen)
+X,1,Yoga,,3,new,Lenovo ThinkPad X1 Yoga (3rd Gen)
+X,1,Yoga,,2,new,Lenovo ThinkPad X1 Yoga 2
+X,1,Yoga,,2018,new,Lenovo ThinkPad X1 Yoga 2018
+X,1,Yoga,,2,new,Lenovo ThinkPad X1 Yoga 2nd Gen
+X,1,Yoga,,3,new,Lenovo ThinkPad X1 Yoga 3
+X,1,Yoga,,3,new,Lenovo ThinkPad X1 Yoga 3rd Gen
+X,1,Yoga,,4,new,Lenovo ThinkPad X1 Yoga 4
+X,1,Yoga,,5,new,Lenovo ThinkPad X1 Yoga 5
+X,1,Yoga,,6,new,Lenovo ThinkPad X1 Yoga 6
+X,1,Yoga,,7,new,Lenovo ThinkPad X1 Yoga 7
+X,1,Yoga,,6,new,Lenovo ThinkPad X1 Yoga Gen 6
+X,1,Yoga,,7,new,Lenovo ThinkPad X1 Yoga Gen 7
+X,1,Yoga,,8,new,Lenovo ThinkPad X1 Yoga Gen 8
+X,12,NONAME,,UNKNOWN,new,Lenovo ThinkPad X12
+X,12,Detachable,,UNKNOWN,new,Lenovo ThinkPad X12 Detachable
+X,12,Detachable,,2,new,Lenovo ThinkPad X12 Detachable Gen 2
+X,13,NONAME,,2,new,Lenovo ThinkPad X13  Gen 2
+X,13,NONAME,,5,new,Lenovo ThinkPad X13 2-in-1 Gen 5
+X,13,NONAME,,1,new,Lenovo ThinkPad X13 Gen 1
+X,13,NONAME,,1,new,Lenovo ThinkPad X13 Gen 1 (AMD)
+X,13,NONAME,,1,new,Lenovo ThinkPad X13 Gen 1 (Intel)
+X,13,NONAME,,2,new,Lenovo ThinkPad X13 Gen 2
+X,13,NONAME,,3,new,Lenovo ThinkPad X13 Gen 3
+X,13,NONAME,,4,new,Lenovo ThinkPad X13 Gen 4
+X,13,NONAME,,5,new,Lenovo ThinkPad X13 Gen 5
+X,13,NONAME,,5,new,Lenovo ThinkPad X13 Gen 5 2-in-1
+X,13,Yoga,,1,new,Lenovo ThinkPad X13 Yoga Gen 1
+X,13,Yoga,,2,new,Lenovo ThinkPad X13 Yoga Gen 2
+X,13,Yoga,,3,new,Lenovo ThinkPad X13 Yoga Gen 3
+X,13,Yoga,,4,new,Lenovo ThinkPad X13 Yoga Gen 4
+X,13,NONAME,s,UNKNOWN,new,Lenovo ThinkPad X13s
+X,13,NONAME,s,1,new,Lenovo ThinkPad X13s Gen 1
+X,2,NONAME,,40,old,Lenovo ThinkPad X240
+X,2,NONAME,,60,old,Lenovo ThinkPad X260
+X,2,NONAME,,70,old,Lenovo ThinkPad X270
+X,2,NONAME,,80,old,Lenovo ThinkPad X280
+X,3,Yoga,,80,old,Lenovo ThinkPad X380 Yoga
+X,3,NONAME,,90,old,Lenovo ThinkPad X390
+X,3,NONAME,,90,old,Lenovo ThinkPad X390 / X395
+X,3,Yoga,,90,old,Lenovo ThinkPad X390 Yoga
+X,3,NONAME,,95,old,Lenovo ThinkPad X395
+X,9-14,NONAME,,1,new,Lenovo ThinkPad X9-14 Gen 1
+X,9-15,NONAME,,1,new,Lenovo ThinkPad X9-15 Gen 1
+11,,Yoga,e,UNKNOWN,new,Lenovo ThinkPad Yoga 11e
+11,,Yoga,e,3,new,Lenovo ThinkPad Yoga 11e (3rd Gen)
+11,,Yoga,e,4,new,Lenovo ThinkPad Yoga 11e (4th Gen)
+11,,Yoga,e,5,new,Lenovo ThinkPad Yoga 11e (5th Gen)
+11,,Yoga,e,6,new,Lenovo ThinkPad Yoga 11e (6th Gen)
+11,,Yoga,e,6,new,Lenovo ThinkPad Yoga 11e 6
+11,,Yoga,e,6,new,Lenovo ThinkPad Yoga 11e 6th Gen
+11,,Yoga,e,3,new,Lenovo ThinkPad Yoga 11e Chromebook (3rd Gen)
+11,,Yoga,e,5,new,Lenovo ThinkPad Yoga 11e Gen 5
+11,,Yoga,e,6,new,Lenovo ThinkPad Yoga 11e Gen 6
+12,,Yoga,,12,new,Lenovo ThinkPad Yoga 12
+2,6,Yoga,,0,old,Lenovo ThinkPad Yoga 260
+3,7,Yoga,,0,old,Lenovo ThinkPad Yoga 370
+4,6,Yoga,,0,old,Lenovo ThinkPad Yoga 460
+Z,13,NONAME,,UNKNOWN,new,Lenovo ThinkPad Z13
+Z,13,NONAME,,1,new,Lenovo ThinkPad Z13 Gen 1
+Z,13,NONAME,,2,new,Lenovo ThinkPad Z13 Gen 2
+Z,16,NONAME,,1,new,Lenovo ThinkPad Z16 Gen 1
+Z,16,NONAME,,2,new,Lenovo ThinkPad Z16 Gen 2
+p,51,NONAME,,UNKNOWN,new,Lenovo ThinkPad p51
+T,4,NONAME,p,40,old,Lenovo ThinkPd T440p
+P,51,NONAME,s,UNKNOWN,new,Lenovo ThinknPad P51s
+11,,NONAME,E,UNKNOWN,new,Lenovo Thinkpad 11E
+11,,NONAME,E,UNKNOWN,new,Lenovo Thinkpad 11E 3'rd Gen
+11,,NONAME,e,3,new,Lenovo Thinkpad 11e (3rd Gen)
+13,,NONAME,,13,new,Lenovo Thinkpad 13
+E,15,NONAME,,UNKNOWN,new,Lenovo Thinkpad E15 G2
+E,15,NONAME,,4,new,Lenovo Thinkpad E15 Gen 4
+E,4,NONAME,,70,old,Lenovo Thinkpad E470
+E,4,NONAME,,80,old,Lenovo Thinkpad E480
+E,5,NONAME,,50,old,Lenovo Thinkpad E550
+E,5,NONAME,,60,old,Lenovo Thinkpad E560
+E,5,NONAME,,70,old,Lenovo Thinkpad E570
+E,5,NONAME,,75,old,Lenovo Thinkpad E575
+E,5,NONAME,,80,old,Lenovo Thinkpad E580
+E,5,NONAME,,90,old,Lenovo Thinkpad E590
+E,5,Edge,,40,old,Lenovo Thinkpad Edge E540
+L,14,NONAME,,1,new,Lenovo Thinkpad L14 Gen 1 (AMD)
+L,4,NONAME,,80,old,Lenovo Thinkpad L480
+L,5,NONAME,,70,old,Lenovo Thinkpad L570
+P,1,NONAME,,UNKNOWN,new,Lenovo Thinkpad P1
+P,15,NONAME,,1,new,Lenovo Thinkpad P15 Gen 1
+P,17,NONAME,,1,new,Lenovo Thinkpad P17 Gen 1
+P,40,Yoga,,UNKNOWN,new,Lenovo Thinkpad P40 Yoga
+P,50,NONAME,,UNKNOWN,new,Lenovo Thinkpad P50
+P,51,NONAME,s,UNKNOWN,new,Lenovo Thinkpad P51s
+P,53,NONAME,,UNKNOWN,new,Lenovo Thinkpad P53
+P,70,NONAME,,UNKNOWN,new,Lenovo Thinkpad P70
+P,71,NONAME,,UNKNOWN,new,Lenovo Thinkpad P71
+T,14,NONAME,,1,new,Lenovo Thinkpad T14 Gen 1
+T,4,NONAME,,40,old,Lenovo Thinkpad T440
+T,4,NONAME,p,40,old,Lenovo Thinkpad T440p
+T,4,NONAME,,60,old,Lenovo Thinkpad T460
+T,4,NONAME,s,60,old,Lenovo Thinkpad T460s
+T,4,NONAME,,70,old,Lenovo Thinkpad T470
+T,4,NONAME,p,70,old,Lenovo Thinkpad T470p
+T,4,NONAME,s,70,old,Lenovo Thinkpad T470s
+T,4,NONAME,,80,old,Lenovo Thinkpad T480
+T,4,NONAME,s,80,old,Lenovo Thinkpad T480s
+T,4,NONAME,,90,old,Lenovo Thinkpad T490
+T,4,NONAME,s,90,old,Lenovo Thinkpad T490s
+T,5,NONAME,,70,old,Lenovo Thinkpad T570
+T,5,NONAME,,80,old,Lenovo Thinkpad T580
+X,1,Carbon,,UNKNOWN,new,Lenovo Thinkpad X1 Carbon
+X,1,Carbon,,2,new,Lenovo Thinkpad X1 Carbon (2nd Gen)
+X,1,Carbon,,4,new,Lenovo Thinkpad X1 Carbon (4th Gen)
+X,1,Carbon,,6,new,Lenovo Thinkpad X1 Carbon 6
+X,1,Carbon,,7,new,Lenovo Thinkpad X1 Carbon 7
+X,1,Carbon,,8,new,Lenovo Thinkpad X1 Carbon 8
+X,1,Yoga,,1,new,Lenovo Thinkpad X1 Yoga (1st Gen)
+X,1,Yoga,,2,new,Lenovo Thinkpad X1 Yoga (2nd Gen)
+X,1,Yoga,,3,new,Lenovo Thinkpad X1 Yoga 3
+X,2,NONAME,,70,old,Lenovo Thinkpad X270
+X,2,NONAME,,80,old,Lenovo Thinkpad X280
+11,,Yoga,E,3,new,Lenovo Thinkpad Yoga 11E (3rd Gen)
+11,,Yoga,e,3,new,Lenovo Thinkpad Yoga 11e (3rd Gen)
+11,,Yoga,e,5,new,Lenovo Thinkpad Yoga 11e (5th Gen)
+2,6,Yoga,,0,old,Lenovo Thinkpad Yoga 260
+3,7,Yoga,,0,old,Lenovo Thinkpad Yoga 370
+4,6,Yoga,,0,old,Lenovo Thinkpad Yoga 460
+X,1,Carbon,,5,new,Lenovo X1 Carbon (5th Gen)
+L,14,NONAME,,2,new,ThinkPad L14 Gen 2
+L,15,NONAME,,2,new,ThinkPad L15 Gen 2
+P,14,NONAME,s,2,new,ThinkPad P14s Gen 2
+P,40,Yoga,,UNKNOWN,new,ThinkPad P40 Yoga

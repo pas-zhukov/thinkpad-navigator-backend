@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 008-migrate-configurations
+      author: pas-zhukov
+      changes:
+        - addColumn:
+            tableName: configuration
+            columns:
+              - column:
+                  name: generation_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_configuration_generation_id
+                    references: generation(id)
+
+        - sql:
+            sql: >
+              INSERT INTO public.configuration (name, generation_id, details_url, thumbnail_url, brand, cpu, gpu, display_size, display_resolution,
+                                                panel_type, storage_ssd, storage_hdd, ram, weight)
+              SELECT DISTINCT 
+              cr.name,
+              g.id,
+              cr.url,
+              cr.thumb,
+              (CASE WHEN cr.brand = '' THEN NULL ELSE cr.brand END),
+              (CASE WHEN cr.cpu = '' THEN NULL ELSE cr.cpu END),
+              (CASE WHEN cr.gpu = '' THEN NULL ELSE cr.gpu END),
+              (CASE WHEN cr.display_size = 0.0 THEN NULL ELSE cr.display_size END),
+              (CASE WHEN cr.display_resolution = '' THEN NULL ELSE cr.display_resolution END),
+              (CASE WHEN cr.panel_type = '' THEN NULL ELSE cr.panel_type END),
+              (CASE WHEN cr.storage_ssd = 0.0 THEN NULL ELSE cr.storage_ssd END),
+              (CASE WHEN cr.storage_hdd = 0.0 THEN NULL ELSE cr.storage_hdd END),
+              (CASE WHEN cr.ram = 0.0 THEN NULL ELSE cr.ram END),
+              (CASE WHEN cr.weight = 0.00 THEN NULL ELSE cr.weight END)
+              FROM configuration_raw cr
+              LEFT JOIN generation g
+              ON g.original_name = cr.name;

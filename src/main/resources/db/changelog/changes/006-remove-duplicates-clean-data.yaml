@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 006-01-remove-duplicates
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              DELETE FROM configuration_raw
+              WHERE id NOT IN (
+                  SELECT MIN(id)
+                  FROM configuration_raw
+                  GROUP BY source_id
+              );
+
+  - changeSet:
+      id: 006-02-remove-ideapads
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              DELETE FROM configuration_raw
+              WHERE name ILIKE '%ideapad%';
+
+  - changeSet:
+      id: 006-03-fix-spaces
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              UPDATE configuration_raw
+              SET name = REGEXP_REPLACE(name, ' {2,}', ' ', 'g')
+              WHERE name ~ '  ';

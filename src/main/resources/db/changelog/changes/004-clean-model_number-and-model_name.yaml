@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-migrate-thinkpad-models-and-generations-data
+      author: pas-zhukov
+      changes:
+
+        - sql:
+            sql: >
+              UPDATE model
+              SET
+                model_number = NULL
+              WHERE
+                model_number = '';
+
+        - sql:
+            sql: >
+              UPDATE model
+              SET
+                model_name = NULL
+              WHERE
+                model_name = 'NONAME';

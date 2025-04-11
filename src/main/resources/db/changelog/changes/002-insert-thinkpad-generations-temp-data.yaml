@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-thinkpad_generations_temp-data
+      author: pas-zhukov
+      changes:
+        - createTable:
+            tableName: thinkpad_generations_temp
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: model_series
+                  type: VARCHAR(10)
+              - column:
+                  name: model_number
+                  type: VARCHAR(50)
+              - column:
+                  name: model_name
+                  type: VARCHAR(50)
+              - column:
+                  name: postfix
+                  type: VARCHAR(10)
+              - column:
+                  name: generation_number
+                  type: VARCHAR(10)
+              - column:
+                  name: generation_type
+                  type: VARCHAR(10)
+              - column:
+                  name: original_name
+                  type: VARCHAR(100)
+
+        - loadData:
+            tableName: thinkpad_generations_temp
+            file: csv/thinkpad_generations.csv
+            relativeToChangelogFile: true
+            separator: ","
+            quotchar: '"'
+            columns:
+              - column:
+                  name: model_series
+                  type: STRING
+              - column:
+                  name: model_number
+                  type: STRING
+              - column:
+                  name: model_name
+                  type: STRING
+              - column:
+                  name: postfix
+                  type: STRING
+              - column:
+                  name: generation_number
+                  type: STRING
+              - column:
+                  name: generation_type
+                  type: STRING
+              - column:
+                  name: original_name
+                  type: STRING

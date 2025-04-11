@@ -8,40 +8,46 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: INT
+                  type: BIGSERIAL
                   constraints:
                     primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: source_id
+                  type: BIGINT
+                  constraints:
                     nullable: false
               - column:
                   name: name
                   type: VARCHAR(255)
               - column:
                   name: url
-                  type: VARCHAR(1000)
+                  type: TEXT
               - column:
                   name: buy_url
-                  type: VARCHAR(1000)
+                  type: TEXT
               - column:
                   name: thumb
-                  type: VARCHAR(1000)
+                  type: TEXT
               - column:
                   name: price
-                  type: NUMERIC(10,2)
+                  type: DECIMAL(10,2)
               - column:
                   name: price_list
-                  type: NUMERIC(10,2)
+                  type: DECIMAL(10,2)
               - column:
                   name: brand
                   type: VARCHAR(255)
               - column:
                   name: cpu
-                  type: VARCHAR(255)
+                  type: TEXT
               - column:
                   name: gpu
-                  type: VARCHAR(255)
+                  type: TEXT
               - column:
                   name: display_size
-                  type: NUMERIC(5,1)
+                  type: DECIMAL(5,1)
               - column:
                   name: display_resolution
                   type: VARCHAR(255)
@@ -53,22 +59,22 @@ databaseChangeLog:
                   type: VARCHAR(50)
               - column:
                   name: panel_code
-                  type: NUMERIC(5,1)
+                  type: DECIMAL(5,1)
               - column:
                   name: refresh_rate
-                  type: NUMERIC(5,1)
+                  type: INTEGER
               - column:
                   name: storage_ssd
-                  type: NUMERIC(10,1)
+                  type: DECIMAL(10,1)
               - column:
                   name: storage_hdd
-                  type: NUMERIC(10,1)
+                  type: DECIMAL(10,1)
               - column:
                   name: ram
-                  type: NUMERIC(5,1)
+                  type: DECIMAL(5,1)
               - column:
                   name: weight
-                  type: NUMERIC(5,2)
+                  type: DECIMAL(5,2)
               - column:
                   name: suitable_for
                   type: TEXT
@@ -83,7 +89,7 @@ databaseChangeLog:
                   type: BOOLEAN
               - column:
                   name: last_upd
-                  type: TIMESTAMP
+                  type: TEXT
 
   - changeSet:
       id: 005-insert-raw-configurations-data
@@ -98,7 +104,7 @@ databaseChangeLog:
             usePreparedStatements: true
             columns:
               - column:
-                  name: id
+                  name: source_id
                   type: NUMERIC
               - column:
                   name: name
@@ -171,4 +177,4 @@ databaseChangeLog:
                   type: BOOLEAN
               - column:
                   name: last_upd
-                  type: TIMESTAMP
+                  type: STRING
