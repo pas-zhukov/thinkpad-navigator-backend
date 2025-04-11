@@ -23,6 +23,8 @@ public class ModelController {
 
     @GetMapping("/all")
     public List<ModelResponseDto> getAllModels() {
-        return modelService.getAllModels().stream().map(modelMapper::toModelResponseDto).toList();
+        return modelService.getAllModels().stream()
+                .map(modelMapper::toModelResponseDto)
+                .toList();
     }
 }
