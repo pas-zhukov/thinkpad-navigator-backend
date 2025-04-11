@@ -1,4 +1,4 @@
-package ru.pas.zhukov.thinkpadnavigator.entity;
+package ru.pas.zhukov.thinkpadnavigator.persistance.entity;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;

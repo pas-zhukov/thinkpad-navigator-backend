@@ -1,8 +1,8 @@
-package ru.pas.zhukov.thinkpadnavigator.repository;
+package ru.pas.zhukov.thinkpadnavigator.persistance.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.pas.zhukov.thinkpadnavigator.entity.Generation;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
 
 @Repository
 public interface GenerationRepository extends JpaRepository<Generation, Long> {
