@@ -1,11 +1,11 @@
 package ru.pas.zhukov.thinkpadnavigator.controller;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.pas.zhukov.thinkpadnavigator.dto.request.ConfigurationSearchParams;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ConfigurationResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.mapper.ConfigurationMapper;
 import ru.pas.zhukov.thinkpadnavigator.service.ConfigurationService;
@@ -20,11 +20,11 @@ public class ConfigurationController {
     private final ConfigurationService configurationService;
     private final ConfigurationMapper configurationMapper;
 
-    @GetMapping("/all")
-    public List<ConfigurationResponseDto> getConfigurationsByGenerationId(
-            @RequestParam @NotNull long generationId
+    @GetMapping("/search")
+    public List<ConfigurationResponseDto> searchConfigurations(
+            @Valid ConfigurationSearchParams params
     ) {
-        return configurationService.getConfigurationsByGenerationId(generationId).stream()
+        return configurationService.getConfigurationsByGenerationId(params.generationId()).stream()
                 .map(configurationMapper::toConfigurationResponseDto)
                 .toList();
     }
