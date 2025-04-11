@@ -35,3 +35,7 @@ databaseChangeLog:
   - include:
       file: changes/009-fix-brands.yaml
       relativeToChangelogFile: true
+
+  - include:
+      file: changes/010-drop-unused-tables.yaml
+      relativeToChangelogFile: true

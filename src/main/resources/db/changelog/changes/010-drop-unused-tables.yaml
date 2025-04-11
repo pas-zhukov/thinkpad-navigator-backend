@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 010-drop-unused-tables
+      author: pas-zhukov
+      changes:
+        - dropTable:
+            tableName: configuration_raw
+
+        - dropTable:
+            tableName: thinkpad_generations_temp
