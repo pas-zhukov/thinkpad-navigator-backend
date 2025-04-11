@@ -10,7 +10,7 @@ import ru.pas.zhukov.thinkpadnavigator.service.ModelService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/model")
+@RequestMapping("/models")
 public class ModelController {
 
     private final ModelService modelService;
@@ -21,7 +21,7 @@ public class ModelController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public List<ModelResponseDto> getAllModels() {
         return modelService.getAllModels().stream()
                 .map(modelMapper::toModelResponseDto)

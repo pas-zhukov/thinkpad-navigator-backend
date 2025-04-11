@@ -1,5 +1,6 @@
 package ru.pas.zhukov.thinkpadnavigator.mapper;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Model;
@@ -9,7 +10,7 @@ import static ru.pas.zhukov.thinkpadnavigator.util.FullNameUtils.buildModelFullN
 @Component
 public class ModelMapper {
 
-    public ModelResponseDto toModelResponseDto(Model model) {
+    public ModelResponseDto toModelResponseDto(@NotNull Model model) {
         return ModelResponseDto.builder()
                 .id(model.getId())
                 .modelSeries(model.getModelSeries())

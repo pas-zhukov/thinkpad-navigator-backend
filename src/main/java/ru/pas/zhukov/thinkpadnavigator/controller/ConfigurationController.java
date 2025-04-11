@@ -13,7 +13,7 @@ import ru.pas.zhukov.thinkpadnavigator.service.ConfigurationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/configuration")
+@RequestMapping("/configurations")
 @RequiredArgsConstructor
 public class ConfigurationController {
 
