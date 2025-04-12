@@ -1,11 +1,10 @@
 package ru.pas.zhukov.thinkpadnavigator.dto.request;
 
 import jakarta.annotation.Nullable;
-import jakarta.validation.constraints.NotNull;
 
 public record GenerationSearchParams(
     
-    @NotNull
+    @Nullable
     Long modelId,
 
     @Nullable
