@@ -2,10 +2,15 @@ package ru.pas.zhukov.thinkpadnavigator.dto.request;
 
 import jakarta.annotation.Nullable;
 
+import java.math.BigDecimal;
+
 public record GenerationSearchParams(
     
     @Nullable
     Long modelId,
+
+    @Nullable
+    Long generationId,
 
     @Nullable
     String generationNumber,
@@ -17,7 +22,19 @@ public record GenerationSearchParams(
     String generationType,
 
     @Nullable
-    Integer releaseYear
+    Integer releaseYear,
+
+    @Nullable
+    BigDecimal screenSize,
+
+    @Nullable
+    String screenResolution,
+
+    @Nullable
+    String panelType,
+
+    @Nullable
+    BigDecimal weight
 
 ) {
 

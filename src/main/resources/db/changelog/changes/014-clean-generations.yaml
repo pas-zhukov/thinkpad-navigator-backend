@@ -1,0 +1,119 @@
+databaseChangeLog:
+  - changeSet:
+      id: 014-clean-generations
+      author: pas-zhukov
+      changes:
+
+        - sql:
+            comment: Чистка от дубликатов
+            sql: >
+              UPDATE configuration
+              SET generation_id = 93
+              WHERE generation_id = 103;
+              
+              DELETE FROM generation
+              WHERE id = 103;
+              
+              
+              UPDATE configuration
+              SET generation_id = 96
+              WHERE generation_id IN (92, 101);
+
+              DELETE FROM generation
+              WHERE id IN (92, 101);
+              
+              
+              UPDATE configuration
+              SET generation_id = 95
+              WHERE generation_id IN (98, 99, 199);
+
+              DELETE FROM generation
+              WHERE id IN (98, 99, 199);
+              
+              
+              UPDATE configuration
+              SET generation_id = 277
+              WHERE generation_id IN (275, 276);
+
+              DELETE FROM generation
+              WHERE id IN (275, 276);
+              
+              
+              UPDATE configuration
+              SET generation_id = 294
+              WHERE generation_id IN (292, 293);
+
+              DELETE FROM generation
+              WHERE id IN (292, 293);
+              
+              
+              UPDATE configuration
+              SET generation_id = 291
+              WHERE generation_id = 287;
+
+              DELETE FROM generation
+              WHERE id = 287;
+              
+              
+              UPDATE configuration
+              SET generation_id = 295
+              WHERE generation_id IN (300, 303);
+
+              DELETE FROM generation
+              WHERE id IN (300, 303);
+              
+              
+              UPDATE configuration
+              SET generation_id = 298
+              WHERE generation_id = 301;
+
+              DELETE FROM generation
+              WHERE id = 301;
+              
+              
+              UPDATE configuration
+              SET generation_id = 390
+              WHERE generation_id IN (368, 370);
+
+              DELETE FROM generation
+              WHERE id IN (368, 370);
+              
+              
+              UPDATE configuration
+              SET generation_id = 384
+              WHERE generation_id = 366;
+
+              DELETE FROM generation
+              WHERE id = 366;
+              
+              
+              UPDATE configuration
+              SET generation_id = 381
+              WHERE generation_id = 364;
+
+              DELETE FROM generation
+              WHERE id = 364;
+              
+              
+              UPDATE configuration
+              SET generation_id = 380
+              WHERE generation_id = 363;
+
+              DELETE FROM generation
+              WHERE id = 363;
+              
+              
+              UPDATE configuration
+              SET generation_id = 378
+              WHERE generation_id = 361;
+
+              DELETE FROM generation
+              WHERE id = 361;
+              
+              
+              UPDATE configuration
+              SET generation_id = 374
+              WHERE generation_id = 359;
+
+              DELETE FROM generation
+              WHERE id = 359;

@@ -2,6 +2,7 @@ package ru.pas.zhukov.thinkpadnavigator.util;
 
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
+import ru.pas.zhukov.thinkpadnavigator.common.model.GenerationType;
 import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
 import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Model;
 
@@ -35,7 +36,7 @@ public class FullNameUtils {
         if (generation.getModel().getModelNumber() != null) {
             fullNameBuilder.append(generation.getModel().getModelNumber());
         }
-        if (Objects.equals(generation.getGenerationType(), "old")) {
+        if (Objects.equals(generation.getGenerationType(), GenerationType.OLD)) {
             fullNameBuilder.append(generation.getGenerationNumber());
         }
         if (generation.getPostfix() != null) {
@@ -45,11 +46,27 @@ public class FullNameUtils {
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append(generation.getModel().getModelName());
         }
-        if (Objects.equals(generation.getGenerationType(), "new")) {
+        if (Objects.equals(generation.getGenerationType(), GenerationType.NEW)) {
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append("Gen");
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append(generation.getGenerationNumber());
+        }
+        return fullNameBuilder.toString();
+    }
+
+    public static String buildSeriesFullName(Model model) {
+        final StringBuilder fullNameBuilder = new StringBuilder();
+        fullNameBuilder.append(model.getModelSeries());
+        if (model.getModelNumber() != null) {
+            fullNameBuilder.append(model.getModelNumber());
+        }
+        if (model.getGenerationType() == GenerationType.OLD) {
+            fullNameBuilder.append("xx");
+        }
+        if (model.getModelName() != null) {
+            fullNameBuilder.append(StringUtils.SPACE);
+            fullNameBuilder.append(model.getModelName());
         }
         return fullNameBuilder.toString();
     }

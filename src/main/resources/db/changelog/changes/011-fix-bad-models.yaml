@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: 011-fix-bad-models
+      author: pas-zhukov
+      changes:
+        - sql:
+            comment: Фикс Lenovo Thinkpad Yoga 460
+            sql: >
+              UPDATE model
+              SET model_number = NULL
+              WHERE id = 15;
+              UPDATE generation
+              SET generation_number = '60'
+              where generation.model_id = 15;
+
+        - sql:
+            comment: Фикс Lenovo Thinkpad Yoga 370
+            sql: >
+              UPDATE model
+              SET model_number = NULL
+              WHERE id = 16;
+              UPDATE generation
+              SET generation_number = '70'
+              where generation.model_id = 16;
+
+        - sql:
+            comment: Фикс Lenovo Thinkpad Yoga 260
+            sql: >
+              UPDATE model
+              SET model_number = NULL
+              WHERE id = 29;
+              UPDATE generation
+              SET generation_number = '60'
+              where generation.model_id = 29;
+
+        - sql:
+            comment: Фикс Lenovo ThinkPad 320 15"
+            sql: >
+              UPDATE model
+              SET model_number = NULL
+              WHERE id = 39;
+              UPDATE generation
+              SET generation_number = '20'
+              where generation.model_id = 39;
+
+        - sql:
+            comment: Фикс Lenovo ThinkPad 570
+            sql: >
+              UPDATE model
+              SET model_number = NULL
+              WHERE id = 57;
+              UPDATE generation
+              SET generation_number = '70'
+              where generation.model_id = 57;

@@ -4,6 +4,7 @@ import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import ru.pas.zhukov.thinkpadnavigator.common.model.PanelType;
 
 import java.math.BigDecimal;
 
@@ -50,8 +51,9 @@ public class Configuration {
     private String displayResolution;
 
     @Nullable
+    @Enumerated(EnumType.STRING)
     @Column(name = "panel_type", length = 15)
-    private String panelType;
+    private PanelType panelType;
 
     @Nullable
     @Column(name = "storage_ssd", precision = 10, scale = 1)

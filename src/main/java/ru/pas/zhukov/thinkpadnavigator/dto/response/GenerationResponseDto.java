@@ -23,7 +23,19 @@ public record GenerationResponseDto(
     String postfix,
 
     @Nullable
-    Integer releaseYear
+    Integer releaseYear,
+
+    @NotNull
+    String detailsUrl,
+
+    @NotNull
+    String thumbnailUrl,
+
+    @NotNull
+    String typicalScreenSize,
+
+    @NotNull
+    String typicalWeight
 
 ) {
 

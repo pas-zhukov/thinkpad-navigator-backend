@@ -39,3 +39,23 @@ databaseChangeLog:
   - include:
       file: changes/010-drop-unused-tables.yaml
       relativeToChangelogFile: true
+
+  - include:
+      file: changes/011-fix-bad-models.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/012-fix-bad-generations.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/013-specify-models-type.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/014-clean-generations.yaml
+      relativeToChangelogFile: true
+
+  - include:
+      file: changes/015-clean-generations.yaml
+      relativeToChangelogFile: true

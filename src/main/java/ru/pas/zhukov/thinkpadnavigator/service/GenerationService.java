@@ -21,6 +21,11 @@ public class GenerationService {
                 params.postfix(),
                 params.generationType(),
                 params.releaseYear(),
+                params.screenSize(),
+                params.screenResolution(),
+                params.panelType(),
+                params.weight(),
+                params.generationId(),
                 pageable
         );
     }

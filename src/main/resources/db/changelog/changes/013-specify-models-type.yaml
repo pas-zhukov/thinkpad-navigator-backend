@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 013-specify-models-type.yaml
+      author: pas-zhukov
+      changes:
+
+        - sql:
+            sql: >
+              UPDATE generation
+              SET generation_type = UPPER(generation_type)
+
+        - addColumn:
+            tableName: model
+            columns:
+              - column:
+                  name: type
+                  type: VARCHAR(3)
+                    
+        - sql:
+            sql: >
+              UPDATE model 
+              SET type = (
+                  SELECT generation.generation_type 
+                  FROM generation 
+                  WHERE generation.model_id = model.id 
+                  LIMIT 1
+              )
+              WHERE EXISTS (
+                  SELECT 1 
+                  FROM generation 
+                  WHERE generation.model_id = model.id
+              )

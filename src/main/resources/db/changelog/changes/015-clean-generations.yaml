@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 015-clean-generations
+      author: pas-zhukov
+      changes:
+
+        - sql:
+            sql: >
+              UPDATE configuration
+              SET generation_id = 95
+              WHERE generation_id = 100;
+
+              DELETE FROM generation
+              WHERE id = 100;
+
+        - sql:
+            sql: >
+              UPDATE generation
+              SET generation_number = '[90|95]'
+              WHERE original_name = 'Lenovo ThinkPad T490s / T495s'

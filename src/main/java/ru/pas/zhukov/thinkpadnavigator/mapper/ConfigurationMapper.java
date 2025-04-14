@@ -19,7 +19,7 @@ public class ConfigurationMapper {
                 .gpu(configuration.getGpu())
                 .displaySize(configuration.getDisplaySize() != null ? configuration.getDisplaySize().toPlainString() : null)
                 .displayResolution(configuration.getDisplayResolution())
-                .panelType(configuration.getPanelType())
+                .panelType(configuration.getPanelType() != null ? configuration.getPanelType().toString() : null)
                 .storageSsd(configuration.getStorageSsd() != null ? configuration.getStorageSsd().toPlainString() : null)
                 .storageHdd(configuration.getStorageHdd() != null ? configuration.getStorageHdd().toPlainString() : null)
                 .ram(configuration.getRam() != null ? configuration.getRam().toPlainString() : null)

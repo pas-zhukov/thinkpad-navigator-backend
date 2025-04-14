@@ -46,4 +46,9 @@ public class Model {
     @Column(name = "release_year")
     private Integer releaseYear;
 
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", length = 3)
+    private ru.pas.zhukov.thinkpadnavigator.common.model.GenerationType generationType;
+
 }

@@ -1,0 +1,109 @@
+databaseChangeLog:
+  - changeSet:
+      id: 016-clean-generations
+      author: pas-zhukov
+      changes:
+
+        - sql:
+            sql: >
+              UPDATE generation
+              SET original_name = 
+                  CASE 
+                      -- Обработка вариантов в скобках (2nd gen) -> Gen 2
+                      WHEN original_name ~* '\(([0-9]+)(st|nd|rd|th) gen\)' THEN
+                          regexp_replace(
+                              original_name,
+                              '\(([0-9]+)(st|nd|rd|th) gen\)',
+                              'Gen \1',
+                              'gi'
+                          )
+                      -- Обработка вариантов без скобок 2nd Gen -> Gen 2
+                      WHEN original_name ~* '([0-9]+)(st|nd|rd|th) gen' THEN
+                          regexp_replace(
+                              original_name,
+                              '([0-9]+)(st|nd|rd|th) gen',
+                              'Gen \1',
+                              'gi'
+                          )
+                      ELSE original_name
+                  END
+              WHERE original_name ~* '([0-9]+)(st|nd|rd|th) gen';
+
+        - sql:
+            sql: >
+              UPDATE generation
+              SET original_name = 
+                  regexp_replace(
+                      original_name,
+                      '\((Gen [0-9]+)\)',
+                      '\1',
+                      'gi'
+                  )
+              WHERE original_name ~* '\(Gen [0-9]+\)';
+
+        - sql:
+            sql: >
+              UPDATE generation
+              SET original_name = 
+                  TRIM(  -- Удаляем лишние пробелы после замены
+                      regexp_replace(
+                          regexp_replace(
+                              original_name,
+                              ' \(intel|amd\)',  -- Удаляет "(Intel)", "(AMD)" с пробелом перед скобкой
+                              '',
+                              'gi'
+                          ),
+                          '[[:<:]](intel|amd)[[:>:]]',  -- Удаляет отдельные слова "Intel", "AMD"
+                          '',
+                          'gi'
+                      )
+                  )
+              WHERE original_name ~* '\(intel|amd\)|[[:<:]](intel|amd)[[:>:]]';
+
+        - sql:
+            sql: >
+              BEGIN;
+
+              -- Шаг 1: Создаем временную таблицу для групп дубликатов
+              CREATE TEMP TABLE duplicate_groups AS 
+              SELECT 
+                  model_id,
+                  generation_number,
+                  LOWER(original_name) AS lower_name,
+                  MIN(id) AS main_id
+              FROM generation
+              WHERE postfix IS NULL
+              GROUP BY 
+                  model_id, 
+                  generation_number, 
+                  LOWER(original_name)
+              HAVING COUNT(*) > 1;
+
+              -- Шаг 2: Создаем временную таблицу с дубликатами
+              CREATE TEMP TABLE duplicates AS 
+              SELECT 
+                  g.id AS duplicate_id,
+                  dg.main_id
+              FROM generation g
+              JOIN duplicate_groups dg 
+                  ON g.model_id = dg.model_id
+                  AND g.generation_number = dg.generation_number
+                  AND LOWER(g.original_name) = dg.lower_name
+              WHERE 
+                  g.postfix IS NULL
+                  AND g.id != dg.main_id;
+
+              -- Шаг 3: Обновляем ссылки в таблице configuration
+              UPDATE configuration
+              SET generation_id = d.main_id
+              FROM duplicates d
+              WHERE configuration.generation_id = d.duplicate_id;
+
+              -- Шаг 4: Удаляем дубликаты из generation
+              DELETE FROM generation
+              WHERE id IN (SELECT duplicate_id FROM duplicates);
+
+              COMMIT;
+
+              -- Очистка временных таблиц
+              DROP TABLE IF EXISTS duplicate_groups, duplicates;

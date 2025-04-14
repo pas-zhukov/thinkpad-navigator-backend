@@ -8,18 +8,27 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
 
+import java.math.BigDecimal;
+
 @Repository
 public interface GenerationRepository extends JpaRepository<Generation, Long> {
 
     @Query(value =
             """
-            SELECT g FROM Generation g
+            SELECT DISTINCT g FROM Generation g
+            LEFT JOIN Configuration c on c.generation = g
             WHERE
             (:modelId IS NULL OR g.model.id = :modelId)
             AND (:generationNumber IS NULL OR g.generationNumber = :generationNumber)
             AND (:postfix IS NULL OR g.postfix = :postfix)
             AND (:generationType IS NULL OR g.generationType = :generationType)
             AND (:releaseYear IS NULL OR g.releaseYear = :releaseYear)
+            AND (:screenSize IS NULL OR c.displaySize = :screenSize)
+            AND (:screenResolution IS NULL OR c.displayResolution ILIKE :screenResolution)
+            AND (:panelType IS NULL OR c.panelType = :panelType)
+            AND (:weight IS NULL OR c.weight <= :weight)
+            AND (:generationId IS NULL OR g.id = :generationId)
+            ORDER BY g.generationNumber ASC
             """
     )
     @EntityGraph(attributePaths = {"model"})
@@ -29,6 +38,11 @@ public interface GenerationRepository extends JpaRepository<Generation, Long> {
             String postfix,
             String generationType,
             Integer releaseYear,
+            BigDecimal screenSize,
+            String screenResolution,
+            String panelType,
+            BigDecimal weight,
+            Long generationId,
             Pageable pageable
     );
 }

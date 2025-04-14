@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 012-fix-bad-generations
+      author: pas-zhukov
+      changes:
+        - sql:
+            comment: Фикс Lenovo Thinkpad 13
+            sql: >
+              UPDATE generation
+              SET generation_number = NULL
+              WHERE id IN (150, 155);
+
+        - sql:
+            comment: Фикс Lenovo ThinkPad Yoga 12
+            sql: >
+              UPDATE generation
+              SET generation_number = NULL
+              WHERE id = 35;
+
+        - sql:
+            comment: Фикс Lenovo ThinkPad 25
+            sql: >
+              UPDATE generation
+              SET generation_number = NULL
+              WHERE id = 48;
