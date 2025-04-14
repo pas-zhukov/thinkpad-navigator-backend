@@ -12,11 +12,7 @@ import lombok.Data;
         uniqueConstraints = {
                 @UniqueConstraint(
                         name = "uk_model_series_number_name",
-                        columnNames = {"model_series", "model_number", "model_name"}
-                ),
-                @UniqueConstraint(
-                        name = "uniq_model_identity",
-                        columnNames = {"model_series", "model_number", "model_name"}
+                        columnNames = {"model_series_id", "model_number", "model_name"}
                 )
         })
 public class Model {
@@ -27,8 +23,9 @@ public class Model {
     private Long id;
 
     @NotNull
-    @Column(name = "model_series", nullable = false, length = 10)
-    private String modelSeries;
+    @ManyToOne
+    @JoinColumn(name = "model_series_id", nullable = false)
+    private ModelSeries modelSeries;
 
     @Nullable
     @Column(name = "model_number", length = 10)

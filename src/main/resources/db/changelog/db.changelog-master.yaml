@@ -79,3 +79,8 @@ databaseChangeLog:
       file: changes/016-clean-generations.yaml
       relativeToChangelogFile: true
       context: Очистка и стандартизация данных в таблице generation (часть 3)
+
+  - include:
+      relativeToChangelogFile: true
+      file: changes/017-normalize-model.yaml
+      context: Нормализация серий моделей

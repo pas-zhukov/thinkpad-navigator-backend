@@ -17,7 +17,7 @@ public class FullNameUtils {
         final StringBuilder fullNameBuilder = new StringBuilder();
         fullNameBuilder.append(LENOVO_THINKPAD);
         fullNameBuilder.append(StringUtils.SPACE);
-        fullNameBuilder.append(model.getModelSeries());
+        fullNameBuilder.append(model.getModelSeries().getName());
         if (model.getModelNumber() != null) {
             fullNameBuilder.append(model.getModelNumber());
         }
@@ -32,7 +32,7 @@ public class FullNameUtils {
         final StringBuilder fullNameBuilder = new StringBuilder();
         fullNameBuilder.append(LENOVO_THINKPAD);
         fullNameBuilder.append(StringUtils.SPACE);
-        fullNameBuilder.append(generation.getModel().getModelSeries());
+        fullNameBuilder.append(generation.getModel().getModelSeries().getName());
         if (generation.getModel().getModelNumber() != null) {
             fullNameBuilder.append(generation.getModel().getModelNumber());
         }
@@ -57,7 +57,7 @@ public class FullNameUtils {
 
     public static String buildSeriesFullName(Model model) {
         final StringBuilder fullNameBuilder = new StringBuilder();
-        fullNameBuilder.append(model.getModelSeries());
+        fullNameBuilder.append(model.getModelSeries().getName());
         if (model.getModelNumber() != null) {
             fullNameBuilder.append(model.getModelNumber());
         }

@@ -15,7 +15,7 @@ public class ModelMapper {
     public ModelResponseDto toModelResponseDto(@NotNull Model model) {
         return ModelResponseDto.builder()
                 .id(model.getId())
-                .modelSeries(model.getModelSeries())
+                .modelSeries(model.getModelSeries().getName())
                 .modelNumber(model.getModelNumber())
                 .modelName(model.getModelName())
                 .description(model.getDescription())

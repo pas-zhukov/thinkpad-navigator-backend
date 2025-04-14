@@ -1,0 +1,79 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop-unique-constraints
+      author: pas-zhukov
+      changes:
+        - dropUniqueConstraint:
+            tableName: model
+            constraintName: uk_model_series_number_name
+
+        - dropUniqueConstraint:
+            tableName: model
+            constraintName: uniq_model_identity
+
+  - changeSet:
+      id: create_model_series_table
+      author: pas-zhukov
+      changes:
+        - createTable:
+            tableName: model_series
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+
+  - changeSet:
+      id: populate_model_series
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: INSERT INTO model_series (name) SELECT DISTINCT model_series FROM model WHERE model_series IS NOT NULL AND model_series != ''
+
+  - changeSet:
+      id: add_model_series_id_to_model
+      author: pas-zhukov
+      changes:
+        - addColumn:
+            tableName: model
+            columns:
+              - column:
+                  name: model_series_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_model_model_series
+                    references: model_series(id)
+
+  - changeSet:
+      id: update_model_series_references
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: UPDATE model m SET model_series_id = (SELECT id FROM model_series ms WHERE ms.name = m.model_series) WHERE m.model_series IS NOT NULL
+
+  - changeSet:
+      id: drop_original_model_series_column
+      author: pas-zhukov
+      changes:
+        - dropColumn:
+            tableName: model
+            columnName: model_series
+
+  - changeSet:
+      id: add-unique-constraint
+      author: pas-zhukov
+      changes:
+        - addUniqueConstraint:
+            tableName: model
+            columnNames: model_series_id, model_number, model_name
+            constraintName: uk_model_series_number_name

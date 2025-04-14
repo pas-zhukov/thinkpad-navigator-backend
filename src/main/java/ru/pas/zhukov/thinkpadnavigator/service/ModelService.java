@@ -14,6 +14,6 @@ public class ModelService {
     private final ModelRepository modelRepository;
 
     public List<Model> getAllModels() {
-        return modelRepository.findAll();
+        return modelRepository.findAllByOrderByModelSeriesNameAsc();
     }
 }
