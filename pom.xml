@@ -41,13 +41,25 @@
                                 <goals>
                                     <goal>report</goal>
                                 </goals>
-                                <configurationEntity>
+                                <configuration>
                                     <formats>
                                         <format>XML</format>
                                     </formats>
-                                </configurationEntity>
+                                </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </exclude>
+                            </excludes>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -116,22 +128,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configurationEntity>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configurationEntity>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
