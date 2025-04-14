@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Data
 @Entity
 @Table(name = "configuration")
-public class Configuration {
+public class ConfigurationEntity {
 
     @Id
     @NotNull
@@ -74,6 +74,6 @@ public class Configuration {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "generation_id", nullable = false)
-    private Generation generation;
+    private GenerationEntity generation;
 
 }

@@ -24,7 +24,7 @@ import ru.pas.zhukov.thinkpadnavigator.common.model.GenerationType;
                         columnNames = {"model_id", "generation_number", "postfix", "original_name"}
                 )
         })
-public class Generation {
+public class GenerationEntity {
 
     @Id
     @NotNull
@@ -34,7 +34,7 @@ public class Generation {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "model_id", nullable = false)
-    private Model model;
+    private ModelEntity model;
 
     @Nullable
     @Column(name = "generation_number", length = 10)

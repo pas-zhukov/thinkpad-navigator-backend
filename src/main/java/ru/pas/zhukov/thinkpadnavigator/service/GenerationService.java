@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.pas.zhukov.thinkpadnavigator.dto.request.GenerationSearchParams;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.GenerationEntity;
 import ru.pas.zhukov.thinkpadnavigator.persistance.repository.GenerationRepository;
 
 @Service
@@ -14,7 +14,7 @@ public class GenerationService {
 
     private final GenerationRepository generationRepository;
 
-    public Page<Generation> searchGenerations(GenerationSearchParams params, Pageable pageable) {
+    public Page<GenerationEntity> searchGenerations(GenerationSearchParams params, Pageable pageable) {
         return generationRepository.findAllByModelIdAndGenerationNumberAndPostfixAndGenerationTypeAndReleaseYear(
                 params.modelId(),
                 params.generationNumber(),

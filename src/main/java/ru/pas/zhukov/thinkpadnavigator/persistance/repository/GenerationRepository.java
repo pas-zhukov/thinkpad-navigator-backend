@@ -6,17 +6,17 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.GenerationEntity;
 
 import java.math.BigDecimal;
 
 @Repository
-public interface GenerationRepository extends JpaRepository<Generation, Long> {
+public interface GenerationRepository extends JpaRepository<GenerationEntity, Long> {
 
     @Query(value =
             """
-            SELECT DISTINCT g FROM Generation g
-            LEFT JOIN Configuration c on c.generation = g
+            SELECT DISTINCT g FROM GenerationEntity g
+            LEFT JOIN ConfigurationEntity c on c.generation = g
             WHERE
             (:modelId IS NULL OR g.model.id = :modelId)
             AND (:generationNumber IS NULL OR g.generationNumber = :generationNumber)
@@ -31,8 +31,8 @@ public interface GenerationRepository extends JpaRepository<Generation, Long> {
             ORDER BY g.generationNumber ASC
             """
     )
-    @EntityGraph(attributePaths = {"model"})
-    Page<Generation> findAllByModelIdAndGenerationNumberAndPostfixAndGenerationTypeAndReleaseYear(
+    @EntityGraph(attributePaths = {"modelEntity"})
+    Page<GenerationEntity> findAllByModelIdAndGenerationNumberAndPostfixAndGenerationTypeAndReleaseYear(
             Long modelId,
             String generationNumber,
             String postfix,

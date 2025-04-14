@@ -3,27 +3,27 @@ package ru.pas.zhukov.thinkpadnavigator.mapper;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ConfigurationResponseDto;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Configuration;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ConfigurationEntity;
 
 @Component
 public class ConfigurationMapper {
 
-    public ConfigurationResponseDto toConfigurationResponseDto(@NotNull Configuration configuration) {
+    public ConfigurationResponseDto toConfigurationResponseDto(@NotNull ConfigurationEntity configurationEntity) {
         return ConfigurationResponseDto.builder()
-                .id(configuration.getId())
-                .generationId(configuration.getGeneration().getId())
-                .detailsUrl(configuration.getDetailsUrl())
-                .thumbnailUrl(configuration.getThumbnailUrl())
-                .brand(configuration.getBrand())
-                .cpu(configuration.getCpu())
-                .gpu(configuration.getGpu())
-                .displaySize(configuration.getDisplaySize() != null ? configuration.getDisplaySize().toPlainString() : null)
-                .displayResolution(configuration.getDisplayResolution())
-                .panelType(configuration.getPanelType() != null ? configuration.getPanelType().toString() : null)
-                .storageSsd(configuration.getStorageSsd() != null ? configuration.getStorageSsd().toPlainString() : null)
-                .storageHdd(configuration.getStorageHdd() != null ? configuration.getStorageHdd().toPlainString() : null)
-                .ram(configuration.getRam() != null ? configuration.getRam().toPlainString() : null)
-                .weight(configuration.getWeight() != null ? configuration.getWeight().toPlainString() : null)
+                .id(configurationEntity.getId())
+                .generationId(configurationEntity.getGeneration().getId())
+                .detailsUrl(configurationEntity.getDetailsUrl())
+                .thumbnailUrl(configurationEntity.getThumbnailUrl())
+                .brand(configurationEntity.getBrand())
+                .cpu(configurationEntity.getCpu())
+                .gpu(configurationEntity.getGpu())
+                .displaySize(configurationEntity.getDisplaySize() != null ? configurationEntity.getDisplaySize().toPlainString() : null)
+                .displayResolution(configurationEntity.getDisplayResolution())
+                .panelType(configurationEntity.getPanelType() != null ? configurationEntity.getPanelType().toString() : null)
+                .storageSsd(configurationEntity.getStorageSsd() != null ? configurationEntity.getStorageSsd().toPlainString() : null)
+                .storageHdd(configurationEntity.getStorageHdd() != null ? configurationEntity.getStorageHdd().toPlainString() : null)
+                .ram(configurationEntity.getRam() != null ? configurationEntity.getRam().toPlainString() : null)
+                .weight(configurationEntity.getWeight() != null ? configurationEntity.getWeight().toPlainString() : null)
                 .build();
     }
 }

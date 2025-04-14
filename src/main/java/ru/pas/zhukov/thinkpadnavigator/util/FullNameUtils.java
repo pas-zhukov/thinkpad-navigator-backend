@@ -3,8 +3,8 @@ package ru.pas.zhukov.thinkpadnavigator.util;
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
 import ru.pas.zhukov.thinkpadnavigator.common.model.GenerationType;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Model;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.GenerationEntity;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ModelEntity;
 
 import java.util.Objects;
 
@@ -13,60 +13,60 @@ import static ru.pas.zhukov.thinkpadnavigator.common.Constant.LENOVO_THINKPAD;
 @UtilityClass
 public class FullNameUtils {
 
-    public static String buildModelFullName(Model model) {
+    public static String buildModelFullName(ModelEntity modelEntity) {
         final StringBuilder fullNameBuilder = new StringBuilder();
         fullNameBuilder.append(LENOVO_THINKPAD);
         fullNameBuilder.append(StringUtils.SPACE);
-        fullNameBuilder.append(model.getModelSeries().getName());
-        if (model.getModelNumber() != null) {
-            fullNameBuilder.append(model.getModelNumber());
+        fullNameBuilder.append(modelEntity.getSeries().getName());
+        if (modelEntity.getModelNumber() != null) {
+            fullNameBuilder.append(modelEntity.getModelNumber());
         }
-        if (model.getModelName() != null) {
+        if (modelEntity.getModelName() != null) {
             fullNameBuilder.append(StringUtils.SPACE);
-            fullNameBuilder.append(model.getModelName());
+            fullNameBuilder.append(modelEntity.getModelName());
         }
         return fullNameBuilder.toString();
     }
 
-    public static String buildGenerationFullName(Generation generation) {
+    public static String buildGenerationFullName(GenerationEntity generationEntity) {
         final StringBuilder fullNameBuilder = new StringBuilder();
         fullNameBuilder.append(LENOVO_THINKPAD);
         fullNameBuilder.append(StringUtils.SPACE);
-        fullNameBuilder.append(generation.getModel().getModelSeries().getName());
-        if (generation.getModel().getModelNumber() != null) {
-            fullNameBuilder.append(generation.getModel().getModelNumber());
+        fullNameBuilder.append(generationEntity.getModel().getSeries().getName());
+        if (generationEntity.getModel().getModelNumber() != null) {
+            fullNameBuilder.append(generationEntity.getModel().getModelNumber());
         }
-        if (Objects.equals(generation.getGenerationType(), GenerationType.OLD)) {
-            fullNameBuilder.append(generation.getGenerationNumber());
+        if (Objects.equals(generationEntity.getGenerationType(), GenerationType.OLD)) {
+            fullNameBuilder.append(generationEntity.getGenerationNumber());
         }
-        if (generation.getPostfix() != null) {
-            fullNameBuilder.append(generation.getPostfix());
+        if (generationEntity.getPostfix() != null) {
+            fullNameBuilder.append(generationEntity.getPostfix());
         }
-        if (generation.getModel().getModelName() != null) {
+        if (generationEntity.getModel().getModelName() != null) {
             fullNameBuilder.append(StringUtils.SPACE);
-            fullNameBuilder.append(generation.getModel().getModelName());
+            fullNameBuilder.append(generationEntity.getModel().getModelName());
         }
-        if (Objects.equals(generation.getGenerationType(), GenerationType.NEW)) {
+        if (Objects.equals(generationEntity.getGenerationType(), GenerationType.NEW)) {
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append("Gen");
             fullNameBuilder.append(StringUtils.SPACE);
-            fullNameBuilder.append(generation.getGenerationNumber());
+            fullNameBuilder.append(generationEntity.getGenerationNumber());
         }
         return fullNameBuilder.toString();
     }
 
-    public static String buildSeriesFullName(Model model) {
+    public static String buildSeriesFullName(ModelEntity modelEntity) {
         final StringBuilder fullNameBuilder = new StringBuilder();
-        fullNameBuilder.append(model.getModelSeries().getName());
-        if (model.getModelNumber() != null) {
-            fullNameBuilder.append(model.getModelNumber());
+        fullNameBuilder.append(modelEntity.getSeries().getName());
+        if (modelEntity.getModelNumber() != null) {
+            fullNameBuilder.append(modelEntity.getModelNumber());
         }
-        if (model.getGenerationType() == GenerationType.OLD) {
+        if (modelEntity.getGenerationType() == GenerationType.OLD) {
             fullNameBuilder.append("xx");
         }
-        if (model.getModelName() != null) {
+        if (modelEntity.getModelName() != null) {
             fullNameBuilder.append(StringUtils.SPACE);
-            fullNameBuilder.append(model.getModelName());
+            fullNameBuilder.append(modelEntity.getModelName());
         }
         return fullNameBuilder.toString();
     }

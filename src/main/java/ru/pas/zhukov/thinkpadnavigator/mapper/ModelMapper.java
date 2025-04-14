@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelSeriesResponseDto;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Model;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ModelEntity;
 
 import static ru.pas.zhukov.thinkpadnavigator.util.FullNameUtils.buildModelFullName;
 import static ru.pas.zhukov.thinkpadnavigator.util.FullNameUtils.buildSeriesFullName;
@@ -12,22 +12,22 @@ import static ru.pas.zhukov.thinkpadnavigator.util.FullNameUtils.buildSeriesFull
 @Component
 public class ModelMapper {
 
-    public ModelResponseDto toModelResponseDto(@NotNull Model model) {
+    public ModelResponseDto toModelResponseDto(@NotNull ModelEntity modelEntity) {
         return ModelResponseDto.builder()
-                .id(model.getId())
-                .modelSeries(model.getModelSeries().getName())
-                .modelNumber(model.getModelNumber())
-                .modelName(model.getModelName())
-                .description(model.getDescription())
-                .releaseYear(model.getReleaseYear())
-                .fullName(buildModelFullName(model))
+                .id(modelEntity.getId())
+                .modelSeries(modelEntity.getSeries().getName())
+                .modelNumber(modelEntity.getModelNumber())
+                .modelName(modelEntity.getModelName())
+                .description(modelEntity.getDescription())
+                .releaseYear(modelEntity.getReleaseYear())
+                .fullName(buildModelFullName(modelEntity))
                 .build();
     }
 
-    public ModelSeriesResponseDto toModelSeriesResponseDto(@NotNull Model model) {
+    public ModelSeriesResponseDto toModelSeriesResponseDto(@NotNull ModelEntity modelEntity) {
         return ModelSeriesResponseDto.builder()
-                .modelId(model.getId())
-                .seriesName(buildSeriesFullName(model))
+                .modelId(modelEntity.getId())
+                .seriesName(buildSeriesFullName(modelEntity))
                 .build();
     }
 }

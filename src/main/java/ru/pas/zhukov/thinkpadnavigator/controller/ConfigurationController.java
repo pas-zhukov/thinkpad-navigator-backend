@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.pas.zhukov.thinkpadnavigator.dto.request.ConfigurationSearchParams;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ConfigurationResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.mapper.ConfigurationMapper;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Configuration;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ConfigurationEntity;
 import ru.pas.zhukov.thinkpadnavigator.service.ConfigurationService;
 
 @RestController
@@ -28,7 +28,7 @@ public class ConfigurationController {
             @Valid ConfigurationSearchParams params,
             Pageable pageable
     ) {
-        Page<Configuration> entities =  configurationService.getConfigurationsByGenerationId(params.generationId(), pageable);
+        Page<ConfigurationEntity> entities =  configurationService.getConfigurationsByGenerationId(params.generationId(), pageable);
         Page<ConfigurationResponseDto> dtosPage = entities.map(configurationMapper::toConfigurationResponseDto);
         return ResponseEntity.ok(new PagedModel<>(dtosPage));
     }

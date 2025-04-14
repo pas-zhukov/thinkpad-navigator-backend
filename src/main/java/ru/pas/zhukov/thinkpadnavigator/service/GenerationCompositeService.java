@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import ru.pas.zhukov.thinkpadnavigator.dto.request.GenerationSearchParams;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.GenerationResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.mapper.GenerationMapper;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Configuration;
-import ru.pas.zhukov.thinkpadnavigator.persistance.entity.Generation;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ConfigurationEntity;
+import ru.pas.zhukov.thinkpadnavigator.persistance.entity.GenerationEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -26,12 +26,12 @@ public class GenerationCompositeService {
     }
 
     public Page<GenerationResponseDto> searchGenerations(GenerationSearchParams params, Pageable pageable) {
-        Page<Generation> generations = generationService.searchGenerations(params, pageable);
+        Page<GenerationEntity> generations = generationService.searchGenerations(params, pageable);
         List<Long> generationIds = generations.stream()
-                .map(Generation::getId)
+                .map(GenerationEntity::getId)
                 .distinct()
                 .toList();
-        Map<Long, Configuration> commonConfigurations = configurationService.findCommonConfigurationsByGenerationIds(generationIds);
+        Map<Long, ConfigurationEntity> commonConfigurations = configurationService.findCommonConfigurationsByGenerationIds(generationIds);
         return generations.map(g -> generationMapper.toGenerationResponseDto(g, commonConfigurations));
     }
 }

@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "model_series")
-public class ModelSeries {
+public class SeriesEntity {
 
     @Id
     @NotNull

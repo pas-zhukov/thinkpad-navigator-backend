@@ -41,11 +41,11 @@
                                 <goals>
                                     <goal>report</goal>
                                 </goals>
-                                <configuration>
+                                <configurationEntity>
                                     <formats>
                                         <format>XML</format>
                                     </formats>
-                                </configuration>
+                                </configurationEntity>
                             </execution>
                         </executions>
                     </plugin>
@@ -122,14 +122,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
+                <configurationEntity>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                </configuration>
+                </configurationEntity>
             </plugin>
         </plugins>
     </build>

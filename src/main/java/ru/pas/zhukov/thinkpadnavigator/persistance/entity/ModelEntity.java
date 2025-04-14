@@ -15,7 +15,7 @@ import lombok.Data;
                         columnNames = {"model_series_id", "model_number", "model_name"}
                 )
         })
-public class Model {
+public class ModelEntity {
 
     @Id
     @NotNull
@@ -25,7 +25,7 @@ public class Model {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "model_series_id", nullable = false)
-    private ModelSeries modelSeries;
+    private SeriesEntity series;
 
     @Nullable
     @Column(name = "model_number", length = 10)
