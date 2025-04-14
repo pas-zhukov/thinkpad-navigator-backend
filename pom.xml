@@ -13,19 +13,39 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>thinkpad-navigator</name>
 	<description>ThinkPad Navigator Backend</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
+	<profile>
+		<id>coverage</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.7</version>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>report</id>
+							<goals>
+								<goal>report</goal>
+							</goals>
+							<configuration>
+								<formats>
+									<format>XML</format>
+								</formats>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
+
 	<properties>
 		<java.version>21</java.version>
 	</properties>
