@@ -15,6 +15,7 @@
     <description>ThinkPad Navigator Backend</description>
 
     <properties>
+        <java.version>21</java.version>
         <sonar.organization>pas-zhukov</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
@@ -54,9 +55,6 @@
 
     </profiles>
 
-    <properties>
-        <java.version>21</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
