@@ -1,7 +1,9 @@
 databaseChangeLog:
   - changeSet:
-      id: 003-migrate-thinkpad-models-and-generations-data
+      id: 004-clean-model_number-and-model_name
       author: pas-zhukov
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      comment: "Очистка данных в полях model_number и model_name: установка NULL для пустых строк и значений 'NONAME'"
       changes:
 
         - sql:

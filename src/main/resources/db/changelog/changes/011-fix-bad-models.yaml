@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 011-fix-bad-models
       author: pas-zhukov
+      comment: Исправление некорректных данных в таблицах model и generation для конкретных моделей ThinkPad
       changes:
         - sql:
             comment: Фикс Lenovo Thinkpad Yoga 460

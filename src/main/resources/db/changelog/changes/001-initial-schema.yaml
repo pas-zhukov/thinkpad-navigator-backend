@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 001-initial-schema
       author: pas-zhukov
+      comment: Создание начальной схемы базы данных с таблицами model и generation, а также добавление уникальных ограничений
       changes:
         - createTable:
             tableName: model

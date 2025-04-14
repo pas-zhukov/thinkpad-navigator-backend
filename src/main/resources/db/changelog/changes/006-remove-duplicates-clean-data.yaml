@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 006-01-remove-duplicates
       author: pas-zhukov
+      comment: Удаление дубликатов записей из таблицы configuration_raw, оставляя только одну запись с минимальным id для каждого source_id
       changes:
         - sql:
             sql: >
@@ -15,6 +16,7 @@ databaseChangeLog:
   - changeSet:
       id: 006-02-remove-ideapads
       author: pas-zhukov
+      comment: Удаление записей о ноутбуках IdeaPad из таблицы configuration_raw, так как они не относятся к линейке ThinkPad
       changes:
         - sql:
             sql: >
@@ -24,6 +26,7 @@ databaseChangeLog:
   - changeSet:
       id: 006-03-fix-spaces
       author: pas-zhukov
+      comment: Исправление множественных пробелов в названиях ноутбуков, заменяя их на один пробел
       changes:
         - sql:
             sql: >

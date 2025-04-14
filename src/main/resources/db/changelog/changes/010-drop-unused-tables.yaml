@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 010-drop-unused-tables
       author: pas-zhukov
+      comment: Удаление временных таблиц configuration_raw и thinkpad_generations_temp после успешной миграции данных
       changes:
         - dropTable:
             tableName: configuration_raw

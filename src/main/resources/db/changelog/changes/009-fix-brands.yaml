@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 009-fix-brands
       author: pas-zhukov
+      comment: Стандартизация названия бренда 'Lenovo' для всех конфигураций, содержащих это слово в названии
       changes:
         - sql:
             sql: >

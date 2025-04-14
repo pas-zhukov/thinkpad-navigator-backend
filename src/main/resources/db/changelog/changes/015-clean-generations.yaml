@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 015-clean-generations
       author: pas-zhukov
+      comment: Очистка дубликатов в таблице generation и обновление ссылок в таблице configuration (часть 2)
       changes:
 
         - sql:

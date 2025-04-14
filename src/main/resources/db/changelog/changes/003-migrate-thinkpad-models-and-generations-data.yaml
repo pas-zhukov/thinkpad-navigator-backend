@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 003-migrate-thinkpad-models-and-generations-data
       author: pas-zhukov
+      comment: Миграция данных из временной таблицы thinkpad_generations_temp в основные таблицы model и generation с обработкой NULL-значений
       changes:
         - addUniqueConstraint:
             tableName: model

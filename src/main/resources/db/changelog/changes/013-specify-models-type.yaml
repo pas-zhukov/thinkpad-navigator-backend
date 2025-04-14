@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 013-specify-models-type.yaml
       author: pas-zhukov
+      comment: Добавление поля type в таблицу model и заполнение его значениями из поля generation_type таблицы generation
       changes:
 
         - sql:

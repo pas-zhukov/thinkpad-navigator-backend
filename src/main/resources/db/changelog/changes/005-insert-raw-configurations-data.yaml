@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 005-create-table-configuration_raw
       author: pas-zhukov
+      comment: Создание временной таблицы configuration_raw для хранения сырых данных о конфигурациях ноутбуков
       changes:
         - createTable:
             tableName: configuration_raw
@@ -94,6 +95,7 @@ databaseChangeLog:
   - changeSet:
       id: 005-insert-raw-configurations-data
       author: pas-zhukov
+      comment: Загрузка данных о конфигурациях ноутбуков из CSV-файла в таблицу configuration_raw
       changes:
         - loadData:
             tableName: configuration_raw

@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 002-insert-thinkpad_generations_temp-data
       author: pas-zhukov
+      comment: Создание временной таблицы thinkpad_generations_temp и загрузка в нее данных о поколениях ThinkPad из CSV-файла
       changes:
         - createTable:
             tableName: thinkpad_generations_temp

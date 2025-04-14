@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 008-migrate-configurations
       author: pas-zhukov
+      comment: Добавление связи с таблицей generation и миграция данных из временной таблицы configuration_raw в основную таблицу configuration с обработкой NULL-значений
       changes:
         - addColumn:
             tableName: configuration

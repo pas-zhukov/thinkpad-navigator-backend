@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 012-fix-bad-generations
       author: pas-zhukov
+      comment: Исправление некорректных данных о номерах поколений для конкретных моделей ThinkPad
       changes:
         - sql:
             comment: Фикс Lenovo Thinkpad 13

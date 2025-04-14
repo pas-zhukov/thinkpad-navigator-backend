@@ -2,6 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: 016-clean-generations
       author: pas-zhukov
+      comment: Стандартизация названий поколений, удаление упоминаний Intel/AMD, очистка специфических поколений и восстановление уникального ограничения
       changes:
 
         - sql:

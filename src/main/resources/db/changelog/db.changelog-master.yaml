@@ -3,63 +3,79 @@ databaseChangeLog:
   - include:
       file: changes/001-initial-schema.yaml
       relativeToChangelogFile: true
+      context: Создание начальной схемы базы данных с таблицами model и generation
 
   - include:
       file: changes/002-insert-thinkpad-generations-temp-data.yaml
       relativeToChangelogFile: true
+      context: Создание временной таблицы и загрузка данных о поколениях ThinkPad из CSV-файла
 
   - include:
       file: changes/003-migrate-thinkpad-models-and-generations-data.yaml
       relativeToChangelogFile: true
+      context: Миграция данных из временной таблицы в основные таблицы model и generation
 
   - include:
       file: changes/004-clean-model_number-and-model_name.yaml
       relativeToChangelogFile: true
+      context: Очистка и стандартизация данных в полях model_number и model_name
 
   - include:
       file: changes/005-insert-raw-configurations-data.yaml
       relativeToChangelogFile: true
+      context: Создание временной таблицы и загрузка сырых данных о конфигурациях
 
   - include:
       file: changes/006-remove-duplicates-clean-data.yaml
       relativeToChangelogFile: true
+      context: Удаление дубликатов и очистка данных в таблицах
 
   - include:
       file: changes/007-create-table-configuration.yaml
       relativeToChangelogFile: true
+      context: Создание таблицы configuration для хранения информации о конфигурациях
 
   - include:
       file: changes/008-migrate-configurations.yaml
       relativeToChangelogFile: true
+      context: Миграция данных о конфигурациях из временной таблицы в основную таблицу
 
   - include:
       file: changes/009-fix-brands.yaml
       relativeToChangelogFile: true
+      context: Исправление данных о брендах в таблицах
 
   - include:
       file: changes/010-drop-unused-tables.yaml
       relativeToChangelogFile: true
+      context: Удаление неиспользуемых временных таблиц
 
   - include:
       file: changes/011-fix-bad-models.yaml
       relativeToChangelogFile: true
+      context: Исправление некорректных данных в таблице model
 
   - include:
       file: changes/012-fix-bad-generations.yaml
       relativeToChangelogFile: true
+      context: Исправление некорректных данных в таблице generation
 
   - include:
       file: changes/013-specify-models-type.yaml
       relativeToChangelogFile: true
+      context: Добавление и заполнение поля type в таблице model
 
   - include:
       file: changes/014-clean-generations.yaml
       relativeToChangelogFile: true
+      context: Очистка и стандартизация данных в таблице generation (часть 1)
 
   - include:
       file: changes/015-clean-generations.yaml
       relativeToChangelogFile: true
+      context: Очистка и стандартизация данных в таблице generation (часть 2)
 
   - include:
       file: changes/016-clean-generations.yaml
       relativeToChangelogFile: true
+      context: Очистка и стандартизация данных в таблице generation (часть 3)
