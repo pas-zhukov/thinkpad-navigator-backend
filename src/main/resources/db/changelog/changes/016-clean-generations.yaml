@@ -60,50 +60,19 @@ databaseChangeLog:
                   )
               WHERE original_name ~* '\(intel|amd\)|[[:<:]](intel|amd)[[:>:]]';
 
-        - sql:
-            sql: >
-              BEGIN;
+        - dropUniqueConstraint:
+            tableName: generation
+            constraintName: uk_model_generation_number_postfix_original_name
 
-              -- Шаг 1: Создаем временную таблицу для групп дубликатов
-              CREATE TEMP TABLE duplicate_groups AS 
-              SELECT 
-                  model_id,
-                  generation_number,
-                  LOWER(original_name) AS lower_name,
-                  MIN(id) AS main_id
-              FROM generation
-              WHERE postfix IS NULL
-              GROUP BY 
-                  model_id, 
-                  generation_number, 
-                  LOWER(original_name)
-              HAVING COUNT(*) > 1;
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/clean-specific-generations.sql
 
-              -- Шаг 2: Создаем временную таблицу с дубликатами
-              CREATE TEMP TABLE duplicates AS 
-              SELECT 
-                  g.id AS duplicate_id,
-                  dg.main_id
-              FROM generation g
-              JOIN duplicate_groups dg 
-                  ON g.model_id = dg.model_id
-                  AND g.generation_number = dg.generation_number
-                  AND LOWER(g.original_name) = dg.lower_name
-              WHERE 
-                  g.postfix IS NULL
-                  AND g.id != dg.main_id;
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/clean-generations.sql
 
-              -- Шаг 3: Обновляем ссылки в таблице configuration
-              UPDATE configuration
-              SET generation_id = d.main_id
-              FROM duplicates d
-              WHERE configuration.generation_id = d.duplicate_id;
-
-              -- Шаг 4: Удаляем дубликаты из generation
-              DELETE FROM generation
-              WHERE id IN (SELECT duplicate_id FROM duplicates);
-
-              COMMIT;
-
-              -- Очистка временных таблиц
-              DROP TABLE IF EXISTS duplicate_groups, duplicates;
+        - addUniqueConstraint:
+            tableName: generation
+            columnNames: model_id, generation_number, postfix, original_name
+            constraintName: uk_model_generation_number_postfix_original_name

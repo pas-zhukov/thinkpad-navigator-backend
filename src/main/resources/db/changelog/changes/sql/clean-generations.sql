@@ -1,21 +1,22 @@
 BEGIN;
 
--- Шаг 1: Создаем временную таблицу для групп дубликатов
+-- Шаг 1: Создаем временную таблицу для групп дубликатов с учетом postfix
 CREATE TEMP TABLE duplicate_groups AS
 SELECT
     model_id,
     generation_number,
     LOWER(original_name) AS lower_name,
+    postfix, -- Учитываем postfix
     MIN(id) AS main_id
 FROM generation
-WHERE postfix IS NULL
-GROUP BY
-    model_id,
-    generation_number,
-    LOWER(original_name)
+GROUP BY -- Группируем по всем значимым полям, включая postfix
+         model_id,
+         generation_number,
+         LOWER(original_name),
+         postfix
 HAVING COUNT(*) > 1;
 
--- Шаг 2: Создаем временную таблицу с дубликатами
+-- Шаг 2: Создаем временную таблицу с дубликатами (учитываем postfix)
 CREATE TEMP TABLE duplicates AS
 SELECT
     g.id AS duplicate_id,
@@ -25,9 +26,8 @@ FROM generation g
               ON g.model_id = dg.model_id
                   AND g.generation_number = dg.generation_number
                   AND LOWER(g.original_name) = dg.lower_name
-WHERE
-    g.postfix IS NULL
-  AND g.id != dg.main_id;
+                  AND g.postfix IS NOT DISTINCT FROM dg.postfix -- Сравнение с NULL
+WHERE g.id != dg.main_id;
 
 -- Шаг 3: Обновляем ссылки в таблице configuration
 UPDATE configuration

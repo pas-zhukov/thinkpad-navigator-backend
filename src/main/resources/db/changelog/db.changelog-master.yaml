@@ -59,3 +59,7 @@ databaseChangeLog:
   - include:
       file: changes/015-clean-generations.yaml
       relativeToChangelogFile: true
+
+  - include:
+      file: changes/016-clean-generations.yaml
+      relativeToChangelogFile: true
