@@ -46,7 +46,7 @@ public class FullNameUtils {
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append(generationEntity.getModel().getModelName());
         }
-        if (Objects.equals(generationEntity.getGenerationType(), GenerationType.NEW)) {
+        if (Objects.equals(generationEntity.getGenerationType(), GenerationType.NEW) && generationEntity.getGenerationNumber() != null) {
             fullNameBuilder.append(StringUtils.SPACE);
             fullNameBuilder.append("Gen");
             fullNameBuilder.append(StringUtils.SPACE);

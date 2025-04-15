@@ -14,10 +14,10 @@ import java.util.List;
 @Repository
 public interface ConfigurationRepository extends JpaRepository<ConfigurationEntity, Long> {
 
-    @EntityGraph(attributePaths = {"generationEntity"})
+    @EntityGraph(attributePaths = {"generation"})
     Page<ConfigurationEntity> findAllByGenerationId(long generationId, Pageable pageable);
 
-    @EntityGraph(attributePaths = {"generationEntity"})
+    @EntityGraph(attributePaths = {"generation"})
     List<ConfigurationEntity> findDistinctByGenerationIdIn(Collection<Long> generationIds);
 
     @Query(
@@ -27,6 +27,6 @@ public interface ConfigurationRepository extends JpaRepository<ConfigurationEnti
             WHERE c2.generation.id IN :generationIds GROUP BY c2.generation.id)
             """
     )
-    @EntityGraph(attributePaths = {"generationEntity"})
+    @EntityGraph(attributePaths = {"generation"})
     List<ConfigurationEntity> findCommonConfigurationsByGenerationIds(Collection<Long> generationIds);
 }

@@ -84,3 +84,8 @@ databaseChangeLog:
       relativeToChangelogFile: true
       file: changes/017-normalize-model.yaml
       context: Нормализация серий моделей
+
+  - include:
+      relativeToChangelogFile: true
+      file: changes/018-remove-bad-series.yaml
+      context: Удаление серии 'p', ссылки заменены на серию 'P'

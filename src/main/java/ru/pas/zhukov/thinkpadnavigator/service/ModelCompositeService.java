@@ -1,6 +1,7 @@
 package ru.pas.zhukov.thinkpadnavigator.service;
 
 import org.springframework.stereotype.Service;
+import ru.pas.zhukov.thinkpadnavigator.dto.request.ModelSeriesSearchParams;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelSeriesResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.mapper.ModelMapper;
 
@@ -18,8 +19,10 @@ public class ModelCompositeService {
         this.modelMapper = modelMapper;
     }
 
-    public List<ModelSeriesResponseDto> getSeries() {
-        var models = modelService.getAllModels();
+    public List<ModelSeriesResponseDto> getSeries(
+            ModelSeriesSearchParams searchParams
+    ) {
+        var models = modelService.getModelsBySeriesId(searchParams.seriesId());
         return models.stream()
                 .map(modelMapper::toModelSeriesResponseDto)
                 .sorted(Comparator.comparing(ModelSeriesResponseDto::seriesName, Comparator.naturalOrder()))

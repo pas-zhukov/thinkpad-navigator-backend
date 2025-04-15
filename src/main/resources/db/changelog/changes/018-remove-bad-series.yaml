@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: remove-bad-series
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              UPDATE model
+              SET model_series_id = 14
+              WHERE model_series_id = 19;
+              
+              DELETE FROM model_series
+              WHERE id = 19;

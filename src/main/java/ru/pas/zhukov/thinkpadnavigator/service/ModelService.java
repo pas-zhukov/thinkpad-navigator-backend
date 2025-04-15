@@ -14,6 +14,10 @@ public class ModelService {
     private final ModelRepository modelRepository;
 
     public List<ModelEntity> getAllModels() {
-        return modelRepository.findAllByOrderBySeriesNameAsc();
+        return modelRepository.findAllOrderBySeriesNameAsc();
+    }
+
+    public List<ModelEntity> getModelsBySeriesId(Long modelSeriesId) {
+        return modelRepository.findAllBySeriesId(modelSeriesId);
     }
 }

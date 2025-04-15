@@ -1,10 +1,12 @@
 package ru.pas.zhukov.thinkpadnavigator.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.pas.zhukov.thinkpadnavigator.dto.request.ModelSeriesSearchParams;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.dto.response.ModelSeriesResponseDto;
 import ru.pas.zhukov.thinkpadnavigator.mapper.ModelMapper;
@@ -30,7 +32,9 @@ public class ModelController {
     }
 
     @GetMapping("/series")
-    public ResponseEntity<List<ModelSeriesResponseDto>> getModelSeries() {
-        return ResponseEntity.ok(modelCompositeService.getSeries());
+    public ResponseEntity<List<ModelSeriesResponseDto>> getModelSeries(
+            @Valid ModelSeriesSearchParams searchParams
+            ) {
+        return ResponseEntity.ok(modelCompositeService.getSeries(searchParams));
     }
 }

@@ -17,6 +17,8 @@ public interface GenerationRepository extends JpaRepository<GenerationEntity, Lo
             """
             SELECT DISTINCT g FROM GenerationEntity g
             LEFT JOIN ConfigurationEntity c on c.generation = g
+            LEFT JOIN ModelEntity m ON g.model = m
+            LEFT JOIN SeriesEntity s ON m.series = s
             WHERE
             (:modelId IS NULL OR g.model.id = :modelId)
             AND (:generationNumber IS NULL OR g.generationNumber = :generationNumber)
@@ -28,11 +30,12 @@ public interface GenerationRepository extends JpaRepository<GenerationEntity, Lo
             AND (:panelType IS NULL OR c.panelType = :panelType)
             AND (:weight IS NULL OR c.weight <= :weight)
             AND (:generationId IS NULL OR g.id = :generationId)
+            AND (:seriesId IS NULL OR s.id = :seriesId)
             ORDER BY g.generationNumber ASC
             """
     )
-    @EntityGraph(attributePaths = {"modelEntity"})
-    Page<GenerationEntity> findAllByModelIdAndGenerationNumberAndPostfixAndGenerationTypeAndReleaseYear(
+    @EntityGraph(attributePaths = {"model"})
+    Page<GenerationEntity> findAllByParams(
             Long modelId,
             String generationNumber,
             String postfix,
@@ -43,6 +46,7 @@ public interface GenerationRepository extends JpaRepository<GenerationEntity, Lo
             String panelType,
             BigDecimal weight,
             Long generationId,
+            Long seriesId,
             Pageable pageable
     );
 }

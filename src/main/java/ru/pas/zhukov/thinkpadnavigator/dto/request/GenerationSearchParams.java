@@ -10,6 +10,9 @@ public record GenerationSearchParams(
     Long modelId,
 
     @Nullable
+    Long seriesId,
+
+    @Nullable
     Long generationId,
 
     @Nullable

@@ -15,7 +15,7 @@ public class GenerationService {
     private final GenerationRepository generationRepository;
 
     public Page<GenerationEntity> searchGenerations(GenerationSearchParams params, Pageable pageable) {
-        return generationRepository.findAllByModelIdAndGenerationNumberAndPostfixAndGenerationTypeAndReleaseYear(
+        return generationRepository.findAllByParams(
                 params.modelId(),
                 params.generationNumber(),
                 params.postfix(),
@@ -26,6 +26,7 @@ public class GenerationService {
                 params.panelType(),
                 params.weight(),
                 params.generationId(),
+                params.seriesId(),
                 pageable
         );
     }
