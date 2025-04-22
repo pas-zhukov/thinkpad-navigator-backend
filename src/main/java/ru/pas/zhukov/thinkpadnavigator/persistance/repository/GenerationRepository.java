@@ -34,7 +34,7 @@ public interface GenerationRepository extends JpaRepository<GenerationEntity, Lo
             ORDER BY g.generationNumber ASC
             """
     )
-    @EntityGraph(attributePaths = {"model"})
+    @EntityGraph(attributePaths = {"model", "commonConfiguration"})
     Page<GenerationEntity> findAllByParams(
             Long modelId,
             String generationNumber,

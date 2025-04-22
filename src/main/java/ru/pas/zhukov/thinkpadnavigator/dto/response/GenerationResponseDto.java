@@ -24,18 +24,9 @@ public record GenerationResponseDto(
 
     @Nullable
     Integer releaseYear,
-
+    
     @NotNull
-    String detailsUrl,
-
-    @NotNull
-    String thumbnailUrl,
-
-    @NotNull
-    String typicalScreenSize,
-
-    @NotNull
-    String typicalWeight
+    ConfigurationResponseDto commonConfiguration
 
 ) {
 

@@ -89,3 +89,8 @@ databaseChangeLog:
       relativeToChangelogFile: true
       file: changes/018-remove-bad-series.yaml
       context: Удаление серии 'p', ссылки заменены на серию 'P'
+
+  - include:
+      relativeToChangelogFile: true
+      file: changes/019-alter-table-generation-add-column-common_configuration_id.yaml
+      context: Добавление ссылки у модели на самую распространённую (дефолтную) конфигурацию

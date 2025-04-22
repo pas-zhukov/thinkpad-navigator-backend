@@ -1,16 +1,7 @@
 package ru.pas.zhukov.thinkpadnavigator.persistance.entity;
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import ru.pas.zhukov.thinkpadnavigator.common.model.GenerationType;
@@ -56,5 +47,10 @@ public class GenerationEntity {
     @NotNull
     @Column(name = "original_name", columnDefinition = "text")
     private String originalName;
+
+    @NotNull
+    @OneToOne
+    @JoinColumn(name = "common_configuration_id", nullable = false)
+    private ConfigurationEntity commonConfiguration;
 
 }

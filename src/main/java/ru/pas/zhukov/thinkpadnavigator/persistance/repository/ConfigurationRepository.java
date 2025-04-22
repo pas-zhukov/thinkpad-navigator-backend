@@ -4,7 +4,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.pas.zhukov.thinkpadnavigator.persistance.entity.ConfigurationEntity;
 
@@ -20,13 +19,4 @@ public interface ConfigurationRepository extends JpaRepository<ConfigurationEnti
     @EntityGraph(attributePaths = {"generation"})
     List<ConfigurationEntity> findDistinctByGenerationIdIn(Collection<Long> generationIds);
 
-    @Query(
-            """
-            SELECT c FROM ConfigurationEntity c WHERE c.id IN
-            (SELECT MIN(c2.id) FROM ConfigurationEntity c2
-            WHERE c2.generation.id IN :generationIds GROUP BY c2.generation.id)
-            """
-    )
-    @EntityGraph(attributePaths = {"generation"})
-    List<ConfigurationEntity> findCommonConfigurationsByGenerationIds(Collection<Long> generationIds);
 }

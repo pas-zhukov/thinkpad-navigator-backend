@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: alter-table-generation-add-column-common_configuration_id
+      author: pas-zhukov
+      changes:
+        - addColumn:
+            tableName: generation
+            columns:
+              - column:
+                  name: common_configuration_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_generation_common_configuration_id
+                    referencedTableName: configuration
+                    referencedColumnNames: id
+
+  - changeSet:
+      id: fill-common-configuration-ids-for-generations
+      author: pas-zhukov
+      changes:
+        - sql:
+            sql: >
+              WITH config_counts AS (
+                  SELECT 
+                      c.generation_id,
+                      c.id AS config_id,
+                      COUNT(*) AS cnt,
+                      ROW_NUMBER() OVER (
+                          PARTITION BY c.generation_id 
+                          ORDER BY COUNT(*) DESC, c.id
+                      ) AS rnk
+                  FROM configuration c
+                  GROUP BY 
+                      c.generation_id,
+                      c.cpu,
+                      c.display_size,
+                      c.display_resolution,
+                      c.panel_type,
+                      c.gpu,
+                      c.id
+              )
+              UPDATE generation g
+              SET common_configuration_id = cc.config_id
+              FROM config_counts cc
+              WHERE 
+                  g.id = cc.generation_id 
+                  AND cc.rnk = 1;
+
+  - changeSet:
+      id: add-non-null-constraint-to-generation
+      author: pas-zhukov
+      changes:
+        - addNotNullConstraint:
+            tableName: generation
+            columnName: common_configuration_id
